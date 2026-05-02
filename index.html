@@ -1,142 +1,193 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-    <title>Zephyr Digital | Notion Templates for High-Performance Executives</title>
+    <title>Zephyr Digital | Notion Templates for High-Performance Professionals</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Premium Notion templates and digital resources for ambitious professionals. Transform ancient wisdom into modern productivity systems." />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium Notion templates for high-performance professionals. Ancient wisdom meets modern productivity." />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #ffffff; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 48px; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 18px; font-weight: 600; color: #1a1a1a; text-decoration: none; }
+        .logo span { color: #1d9e75; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { font-size: 14px; color: #555; text-decoration: none; }
+        .nav-links a:hover { color: #1d9e75; }
+
+        .hero { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 100px 48px; text-align: center; color: white; }
+        .hero-badge { display: inline-block; background: rgba(29,158,117,0.25); color: #64d2a0; font-size: 12px; font-weight: 500; padding: 6px 18px; border-radius: 100px; border: 1px solid rgba(100,210,160,0.3); margin-bottom: 28px; }
+        .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .hero h1 em { font-style: normal; color: #64d2a0; }
+        .hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-green { background: #1d9e75; color: white; font-size: 15px; font-weight: 600; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
+        .btn-green:hover { background: #157a5a; }
+        .btn-outline { background: transparent; color: white; font-size: 15px; font-weight: 500; padding: 14px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.35); text-decoration: none; }
+
+        .section { padding: 80px 48px; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 32px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+        .section-header p { font-size: 16px; color: #777; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+
+        .product-card { background: #ffffff; border: 1px solid #e8e8e8; border-radius: 16px; padding: 32px; transition: box-shadow 0.2s, transform 0.2s; }
+        .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .product-card.featured { border: 2px solid #1d9e75; }
+        .card-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; margin-bottom: 18px; }
+        .badge-green { background: #e1f5ee; color: #0f6e56; }
+        .badge-purple { background: #eeedfe; color: #3c3489; }
+        .card-emoji { font-size: 36px; margin-bottom: 14px; display: block; }
+        .card-title { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; }
+        .card-subtitle { font-size: 13px; color: #1d9e75; font-style: italic; margin-bottom: 14px; }
+        .card-desc { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 20px; }
+        .card-features { list-style: none; margin-bottom: 28px; }
+        .card-features li { font-size: 13px; color: #444; padding: 5px 0 5px 20px; position: relative; }
+        .card-features li::before { content: '✓'; position: absolute; left: 0; color: #1d9e75; font-weight: 700; }
+        .card-divider { border: none; border-top: 1px solid #f0f0f0; margin-bottom: 22px; }
+        .card-footer { display: flex; align-items: center; justify-content: space-between; }
+        .card-price { font-size: 28px; font-weight: 700; color: #1a1a1a; }
+        .card-price-note { font-size: 11px; color: #999; margin-top: 2px; }
+        .card-btn { background: #1d9e75; color: white; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 8px; text-decoration: none; }
+        .card-btn:hover { background: #157a5a; }
+
+        .why-section { background: #f8fffe; padding: 80px 48px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+        .feature-item { background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px; }
+        .feature-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+        .feature-title { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .feature-desc { font-size: 13px; color: #777; line-height: 1.6; }
+
+        .contact-section { padding: 80px 48px; text-align: center; background: #1a1a2e; color: white; }
+        .contact-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .contact-section p { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 28px; }
+        .contact-email { display: inline-block; background: rgba(29,158,117,0.2); color: #64d2a0; font-size: 15px; font-weight: 500; padding: 12px 28px; border-radius: 8px; border: 1px solid rgba(100,210,160,0.3); text-decoration: none; }
+
+        footer { background: #111; color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 13px; }
+
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 64px 24px; }
+            .hero h1 { font-size: 36px; }
+            .section, .why-section, .contact-section { padding: 60px 24px; }
+        }
+    </style>
 </head>
-<body class="is-preload">
+<body>
 
-    <!-- Header -->
-    <div id="header">
-        <nav id="nav">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <a href="#" class="logo">Zephyr<span>Digital</span></a>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="wrapper style1 fullscreen fade-up">
-        <div class="inner">
-            <h1>Work Smarter.<br />Live Deeper.</h1>
-            <p>Premium Notion templates and digital resources for high-performance professionals.<br />
-            Ancient wisdom meets modern productivity — designed for ambitious people like you.</p>
-            <ul class="actions">
-                <li><a href="#products" class="button primary big">Browse Products</a></li>
-                <li><a href="#about" class="button big">Learn More</a></li>
-            </ul>
+    <section class="hero">
+        <div class="hero-badge">✦ Premium Digital Products</div>
+        <h1>Work Smarter.<br/><em>Live Deeper.</em></h1>
+        <p>Premium Notion templates for high-performance professionals. Ancient wisdom meets modern productivity.</p>
+        <div class="hero-btns">
+            <a href="#products" class="btn-green">Browse Products</a>
+            <a href="#why" class="btn-outline">Learn More</a>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="wrapper style2 spotlights">
+    <section class="section" id="products">
+        <div class="section-header">
+            <h2>Our Products</h2>
+            <p>Thoughtfully designed tools — ready to use from day one</p>
+        </div>
+        <div class="products-grid">
 
-        <!-- Product 1 -->
-        <section>
-            <div class="content">
-                <div class="inner">
-                    <h2>🌿 The Tao of Flow</h2>
-                    <p><em>A Daoist Productivity System for High-Performance Executives</em></p>
-                    <p>Stop forcing. Start flowing. This Notion template brings the timeless wisdom of Taoism into your daily work routine — helping you achieve more by doing less, in harmony with natural energy cycles.</p>
-                    <ul>
-                        <li>4-week seasonal productivity cycle system</li>
-                        <li>Daily energy tracking aligned with Daoist principles</li>
-                        <li>Weekly reflection & strategy database</li>
-                        <li>Built-in habit tracker & focus rituals</li>
-                    </ul>
-                    <p><strong>$9.9 USD — One-time purchase, lifetime access</strong></p>
-                    <ul class="actions">
-                        <li><a href="https://zephyrai.gumroad.com/l/aydhfl" class="button primary">Get It Now — $9.9</a></li>
-                    </ul>
+            <div class="product-card featured">
+                <span class="card-badge badge-green">⭐ Bestseller</span>
+                <span class="card-emoji">🌿</span>
+                <div class="card-title">The Tao of Flow</div>
+                <div class="card-subtitle">A Daoist Productivity System for High-Performance Executives</div>
+                <div class="card-desc">Stop forcing. Start flowing. This Notion template brings the timeless wisdom of Taoism into your daily work — helping you achieve more by doing less.</div>
+                <ul class="card-features">
+                    <li>4-week seasonal productivity cycle system</li>
+                    <li>Daily energy tracking aligned with Daoist principles</li>
+                    <li>Weekly reflection & strategy database</li>
+                    <li>Built-in habit tracker & focus rituals</li>
+                </ul>
+                <hr class="card-divider"/>
+                <div class="card-footer">
+                    <div>
+                        <div class="card-price">$9.9</div>
+                        <div class="card-price-note">One-time · Lifetime access</div>
+                    </div>
+                    <a href="https://zephyrai.gumroad.com/l/aydhfl" class="card-btn">Get Now →</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Product 2 -->
-        <section>
-            <div class="content">
-                <div class="inner">
-                    <h2>📋 The 7 Habits — 12-Week Notion Template</h2>
-                    <p><em>Turn Stephen Covey's Timeless Framework Into a Living System</em></p>
-                    <p>You've read the book. Now actually live it. This 12-week Notion template gives you a structured, week-by-week action plan to internalize all 7 habits — from being proactive to sharpening the saw.</p>
-                    <ul>
-                        <li>12-week structured habit development plan</li>
-                        <li>One habit per focus period with daily prompts</li>
-                        <li>Progress tracking & weekly review system</li>
-                        <li>Reflection journal built right in</li>
-                    </ul>
-                    <p><strong>$9.9 USD — One-time purchase, lifetime access</strong></p>
-                    <ul class="actions">
-                        <li><a href="https://zephyrai.gumroad.com/l/mrigkg" class="button primary">Get It Now — $9.9</a></li>
-                    </ul>
+            <div class="product-card">
+                <span class="card-badge badge-purple">✨ New</span>
+                <span class="card-emoji">📋</span>
+                <div class="card-title">The 7 Habits — 12-Week Template</div>
+                <div class="card-subtitle">Turn Stephen Covey's Framework Into a Living System</div>
+                <div class="card-desc">You've read the book. Now actually live it. A structured, week-by-week Notion system to internalize all 7 habits.</div>
+                <ul class="card-features">
+                    <li>12-week structured habit development plan</li>
+                    <li>One habit per focus period with daily prompts</li>
+                    <li>Progress tracking & weekly review system</li>
+                    <li>Reflection journal built right in</li>
+                </ul>
+                <hr class="card-divider"/>
+                <div class="card-footer">
+                    <div>
+                        <div class="card-price">$9.9</div>
+                        <div class="card-price-note">One-time · Lifetime access</div>
+                    </div>
+                    <a href="https://zephyrai.gumroad.com/l/mrigkg" class="card-btn">Get Now →</a>
                 </div>
             </div>
-        </section>
 
+        </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="wrapper style3 fade-up">
-        <div class="inner">
+    <section class="why-section" id="why">
+        <div class="section-header">
             <h2>Why Zephyr Digital?</h2>
-            <p>We create premium digital tools that bridge the gap between ancient wisdom and modern ambition. Every product is thoughtfully designed to be immediately useful — no fluff, no filler.</p>
-            <div class="features">
-                <section>
-                    <span class="icon solid major fa-gem"></span>
-                    <h3>Premium Quality</h3>
-                    <p>Every template is carefully crafted and tested. Clean design, clear structure, instant value from day one.</p>
-                </section>
-                <section>
-                    <span class="icon solid major fa-bolt"></span>
-                    <h3>Ready to Use</h3>
-                    <p>No setup headaches. Duplicate to your Notion workspace and start using within minutes of purchase.</p>
-                </section>
-                <section>
-                    <span class="icon solid major fa-infinity"></span>
-                    <h3>Lifetime Access</h3>
-                    <p>Buy once, keep forever. All future updates included at no extra cost.</p>
-                </section>
-                <section>
-                    <span class="icon solid major fa-dollar-sign"></span>
-                    <h3>Affordable Pricing</h3>
-                    <p>Professional-grade tools at accessible prices. High value, low barrier to entry.</p>
-                </section>
+            <p>Everything you need, nothing you don't</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">💎</span>
+                <div class="feature-title">Premium quality</div>
+                <div class="feature-desc">Carefully crafted and tested. Clean design, clear structure, instant value from day one.</div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <div class="feature-title">Ready to use</div>
+                <div class="feature-desc">Duplicate to Notion and start in minutes. No setup headaches at all.</div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">♾️</span>
+                <div class="feature-title">Lifetime access</div>
+                <div class="feature-desc">Buy once, keep forever. All future updates included at no extra cost.</div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💰</span>
+                <div class="feature-title">Affordable</div>
+                <div class="feature-desc">Professional-grade tools at accessible prices. High value, low barrier to entry.</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="wrapper style1 fade-up">
-        <div class="inner">
-            <h2>Get in Touch</h2>
-            <p>Have a question about a product? Want a custom template for your team? We'd love to hear from you.</p>
-            <p>📧 Email us at: <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a></p>
-            <p>More products coming soon — follow along for updates!</p>
-        </div>
+    <section class="contact-section" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Questions about a product? Want a custom template for your team?<br/>We'd love to hear from you.</p>
+        <a href="mailto:Yakovxia@gmail.com" class="contact-email">✉ Yakovxia@gmail.com</a>
     </section>
 
-    <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt">
-        <div class="inner">
-            <ul class="menu">
-                <li>&copy; 2026 Zephyr Digital. All rights reserved.</li>
-            </ul>
-        </div>
+    <footer>
+        <p>© 2026 Zephyr Digital · All rights reserved</p>
     </footer>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
