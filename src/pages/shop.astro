@@ -1,0 +1,147 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Shop | Evan" description="Digital products built by Evan — templates, toolkits, and workflows for digital nomads." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="shop-hero">
+				<h1>Digital Products by Evan</h1>
+				<p>I built these for myself first. Now I'm making them available to you.</p>
+			</section>
+
+			<section class="products">
+				<article class="product-card">
+					<div class="product-tag">Bestseller</div>
+					<h2>The Tao of Flow</h2>
+					<p class="product-origin">I was burning out at Honeywell trying to do more, faster. This Notion system helped me slow down and actually get the right things done.</p>
+					<ul>
+						<li>4-week seasonal productivity cycle system</li>
+						<li>Daily energy tracking aligned with Daoist principles</li>
+						<li>Weekly reflection & strategy database</li>
+						<li>Built-in habit tracker & focus rituals</li>
+					</ul>
+					<div class="product-footer">
+						<span class="price">$19</span>
+						<a href="https://gumroad.com" target="_blank" class="btn-buy">Get Now →</a>
+					</div>
+				</article>
+
+				<article class="product-card">
+					<div class="product-tag">New</div>
+					<h2>The 7 Habits — 12-Week Template</h2>
+					<p class="product-origin">You've read the book. I built this because I needed a real system to actually live it, not just think about it.</p>
+					<ul>
+						<li>12-week structured habit development plan</li>
+						<li>One habit per focus period with daily prompts</li>
+						<li>Progress tracking & weekly review system</li>
+						<li>Reflection journal built right in</li>
+					</ul>
+					<div class="product-footer">
+						<span class="price">$19</span>
+						<a href="https://gumroad.com" target="_blank" class="btn-buy">Get Now →</a>
+					</div>
+				</article>
+			</section>
+
+			<section class="shop-note">
+				<p>Questions about a product? Email me at <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 860px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+	.shop-hero {
+		text-align: center;
+		padding: 3rem 0 2rem;
+	}
+	.shop-hero h1 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+	}
+	.shop-hero p {
+		font-size: 1.1rem;
+		color: #666;
+	}
+	.products {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		padding: 2rem 0;
+	}
+	.product-card {
+		border: 1px solid #eee;
+		border-radius: 10px;
+		padding: 1.5rem;
+		position: relative;
+	}
+	.product-tag {
+		display: inline-block;
+		background: #000;
+		color: #fff;
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+	.product-card h2 {
+		font-size: 1.3rem;
+		margin-bottom: 0.5rem;
+	}
+	.product-origin {
+		color: #666;
+		font-style: italic;
+		margin-bottom: 1rem;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+	.product-card ul {
+		padding-left: 1.2rem;
+		margin-bottom: 1.5rem;
+		color: #444;
+	}
+	.product-card ul li {
+		margin-bottom: 0.4rem;
+		font-size: 0.95rem;
+	}
+	.product-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid #eee;
+		padding-top: 1rem;
+	}
+	.price {
+		font-size: 1.5rem;
+		font-weight: 800;
+	}
+	.btn-buy {
+		background: #000;
+		color: #fff;
+		padding: 0.6rem 1.2rem;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.shop-note {
+		text-align: center;
+		padding: 2rem 0;
+		color: #666;
+	}
+</style>

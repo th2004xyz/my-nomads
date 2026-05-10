@@ -1,0 +1,149 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+<main>
+			<!-- Hero Section -->
+			<section class="hero">
+				<h1>From Corporate to Free.</h1>
+				<h2>I'm Building My Digital Nomad Life in Public.</h2>
+				<p>5 years at Honeywell. Quit. Now I build and sell digital products using AI — documenting every step so you don't have to figure it out alone.</p>
+				<div class="hero-buttons">
+					<a href="/journey" class="btn-primary">Follow the Journey →</a>
+					<a href="/shop" class="btn-secondary">Browse Products</a>
+				</div>
+			</section>
+
+			<!-- Three Entry Points -->
+			<section class="entry-points">
+				<div class="card">
+					<div class="card-icon">📓</div>
+					<h3>My Journey</h3>
+					<p>I document everything — wins, failures, and lessons from building a digital nomad business from scratch.</p>
+					<a href="/journey">Read the Journey →</a>
+				</div>
+				<div class="card">
+					<div class="card-icon">🛠</div>
+					<h3>Free Resources</h3>
+					<p>Curated tools, workflows, and guides I actually use. Free to access, no fluff.</p>
+					<a href="/resources">Explore Resources →</a>
+				</div>
+				<div class="card">
+					<div class="card-icon">🛒</div>
+					<h3>Digital Products</h3>
+					<p>Templates, toolkits, and systems I built for myself — now packaged for you.</p>
+					<a href="/shop">Visit the Shop →</a>
+				</div>
+			</section>
+
+			<!-- My Story Preview -->
+			<section class="story-preview">
+				<h2>Why I started this</h2>
+				<p>I spent 5 years working at Honeywell. Stable job. Predictable life. And a growing feeling that I was building someone else's dream.</p>
+				<p>In 2025, I quit. No backup plan. Just a belief: in the age of AI, the people who create — not just execute — will thrive.</p>
+				<p>I'm now building a digital nomad life from scratch, using AI tools and digital products. This site is my public record of how it's going.</p>
+				<a href="/about" class="btn-secondary">Read my full story →</a>
+			</section>
+		</main>		<Footer />
+	
+	<style>  
+    main {  
+        max-width: 860px;  
+        margin: 0 auto;  
+        padding: 2rem 1rem;  
+    }  
+    .hero {  
+        text-align: center;  
+        padding: 4rem 0 3rem;  
+    }  
+    .hero h1 {  
+        font-size: 2.8rem;  
+        font-weight: 800;  
+        margin-bottom: 0.5rem;  
+    }  
+    .hero h2 {  
+        font-size: 1.8rem;  
+        font-weight: 600;  
+        color: #555;  
+        margin-bottom: 1rem;  
+    }  
+    .hero p {  
+        font-size: 1.1rem;  
+        color: #666;  
+        max-width: 600px;  
+        margin: 0 auto 2rem;  
+    }  
+    .hero-buttons {  
+        display: flex;  
+        gap: 1rem;  
+        justify-content: center;  
+        flex-wrap: wrap;  
+    }  
+    .btn-primary {  
+        background: #000;  
+        color: #fff;  
+        padding: 0.75rem 1.5rem;  
+        border-radius: 6px;  
+        text-decoration: none;  
+        font-weight: 600;  
+    }  
+    .btn-secondary {  
+        border: 2px solid #000;  
+        color: #000;  
+        padding: 0.75rem 1.5rem;  
+        border-radius: 6px;  
+        text-decoration: none;  
+        font-weight: 600;  
+    }  
+    .entry-points {  
+        display: grid;  
+        grid-template-columns: repeat(3, 1fr);  
+        gap: 1.5rem;  
+        padding: 3rem 0;  
+    }  
+    .card {  
+        border: 1px solid #eee;  
+        border-radius: 10px;  
+        padding: 1.5rem;  
+    }  
+    .card-icon {  
+        font-size: 2rem;  
+        margin-bottom: 0.5rem;  
+    }  
+    .card h3 {  
+        font-size: 1.2rem;  
+        margin-bottom: 0.5rem;  
+    }  
+    .card p {  
+        color: #666;  
+        font-size: 0.95rem;  
+        margin-bottom: 1rem;  
+    }  
+    .story-preview {  
+        background: #f9f9f9;  
+        border-radius: 10px;  
+        padding: 2.5rem;  
+        margin: 2rem 0;  
+    }  
+    .story-preview h2 {  
+        font-size: 1.8rem;  
+        margin-bottom: 1rem;  
+    }  
+    .story-preview p {  
+        color: #444;  
+        margin-bottom: 1rem;  
+        line-height: 1.7;  
+    }  
+</style>
+</body>
+</html>

@@ -1,0 +1,146 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Resources | Evan" description="Free resources for digital nomads — AI tools, workflows, and guides I actually use." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="resources-hero">
+				<h1>Free Resources for Digital Nomads</h1>
+				<p>Everything I wish I had when I started. Free, practical, and updated regularly.</p>
+			</section>
+
+			<section class="resource-group">
+				<h2>🤖 AI Tools I Actually Use</h2>
+				<p class="group-desc">These are the tools I use every day to build my site, create products, and run my business.</p>
+				<div class="tool-list">
+					<div class="tool-card">
+						<h3>Claude (Anthropic)</h3>
+						<p>My main AI assistant. I use it for writing, coding, research, and product creation. Better than ChatGPT for long-form thinking.</p>
+					</div>
+					<div class="tool-card">
+						<h3>Perplexity</h3>
+						<p>AI-powered search. I use it to research markets, find trends, and verify facts faster than Google.</p>
+					</div>
+					<div class="tool-card">
+						<h3>VS Code + GitHub Copilot</h3>
+						<p>How I build this website. Copilot helps me write code even though I'm not a developer.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="resource-group">
+				<h2>🌏 Digital Nomad Starter Guide</h2>
+				<p class="group-desc">The basics I had to figure out the hard way — so you don't have to.</p>
+				<div class="tool-list">
+					<div class="tool-card">
+						<h3>How to choose your first city</h3>
+						<p>Internet speed, cost of living, visa requirements, and community. My checklist for evaluating any city as a digital nomad base.</p>
+					</div>
+					<div class="tool-card">
+						<h3>Essential tools & gear</h3>
+						<p>Laptop, backup internet, VPN, noise-canceling headphones. What I actually bring and use every day.</p>
+					</div>
+					<div class="tool-card">
+						<h3>Banking & payments</h3>
+						<p>How to get paid internationally without losing 5% to fees. Wise, Payoneer, and Gumroad payouts explained.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="resource-group">
+				<h2>💰 How to Sell Digital Products</h2>
+				<p class="group-desc">What I learned from building and selling my first products on Gumroad.</p>
+				<div class="tool-list">
+					<div class="tool-card">
+						<h3>Gumroad beginner guide</h3>
+						<p>How to set up your store, create a product page that converts, and connect your own domain. Step by step.</p>
+					</div>
+					<div class="tool-card">
+						<h3>Finding your niche with data</h3>
+						<p>Don't guess what to sell. I use X search and Reddit to find what people are already paying for.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="resources-cta">
+				<p>I turned my full workflow into downloadable products.</p>
+				<a href="/shop" class="btn-primary">Visit the Shop →</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 860px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+	.resources-hero {
+		text-align: center;
+		padding: 3rem 0 2rem;
+	}
+	.resources-hero h1 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+	}
+	.resources-hero p {
+		font-size: 1.1rem;
+		color: #666;
+	}
+	.resource-group {
+		padding: 2rem 0;
+		border-top: 1px solid #eee;
+	}
+	.resource-group h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.group-desc {
+		color: #666;
+		margin-bottom: 1.5rem;
+	}
+	.tool-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1rem;
+	}
+	.tool-card {
+		border: 1px solid #eee;
+		border-radius: 8px;
+		padding: 1.2rem;
+	}
+	.tool-card h3 {
+		font-size: 1rem;
+		font-weight: 700;
+		margin-bottom: 0.4rem;
+	}
+	.tool-card p {
+		color: #555;
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+	.resources-cta {
+		text-align: center;
+		padding: 3rem 0;
+		border-top: 1px solid #eee;
+	}
+	.resources-cta p {
+		color: #666;
+		margin-bottom: 1rem;
+	}
+	.btn-primary {
+		background: #000;
+		color: #fff;
+		padding: 0.75rem 1.5rem;
+		bord
