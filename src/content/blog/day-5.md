@@ -1,5 +1,5 @@
 ---
-title: "Day 5 — I Built a Website From Scratch. And I Can\'t Code."
+title: 'Day 5 - I Built a Website From Scratch. And I Cannot Code.'
 description: 'Five days in. A live website, two products on Gumroad, and one mistake that broke everything.'
 pubDate: 'May 11 2026'
 heroImage: '../../assets/blog-placeholder-3.jpg'
