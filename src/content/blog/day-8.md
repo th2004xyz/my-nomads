@@ -1,8 +1,9 @@
 ---
-title: 'Day 8 — I Redesigned My Homepage. Without Knowing CSS.'
-description: 'Tailwind installed, a real domain purchased, and more broken things fixed than I can count.'
-pubDate: 'May 13 2026'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+title: "Day 8 — I Redesigned My Homepage. Without Knowing CSS."
+description: "Tailwind installed, a real domain purchased, and more broken things fixed than I can count."
+pubDate: "2026-05-13"
+slug: "day-8"
+heroImage: "/assets/blog-placeholder-3.jpg"
 ---
 
 Day 8. The site looks completely different from yesterday. Let me explain what happened.
