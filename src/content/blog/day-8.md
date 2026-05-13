@@ -72,7 +72,7 @@ I'm not doing that version.
 
 Today I fixed a hover direction, debugged a CSS import chain, bought a domain I almost talked myself out of, and pushed broken code to production twice.
 
-None of that is glamorous. All of it is real.
+None of that is glamorous. It's all real.
 
 The gap between "I want a good website" and "I have a good website" is just a long series of small broken things. You fix them one at a time. The site gets better. You understand more than you did yesterday.
 
@@ -91,3 +91,4 @@ Still showing the zeros.
 ---
 
 *Next up: connecting zephyrdn.com to the live site, fixing the remaining page layouts, and getting the first real visitor who isn't me.*
+
