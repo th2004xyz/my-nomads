@@ -3,7 +3,7 @@ title: "Day 8 — I Redesigned My Homepage. Without Knowing CSS."
 description: "Tailwind installed, a real domain purchased, and more broken things fixed than I can count."
 pubDate: "2026-05-13"
 slug: "day-8"
-heroImage: "/assets/day-series-hero.jpg"
+heroImage: "../../assets/day-series-hero.jpg"
 ---
 
 Day 8. The site looks completely different from yesterday. Let me explain what happened.
