@@ -20,7 +20,7 @@ import Layout from '../layouts/BaseLayout.astro';
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/journey"
              class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition text-center font-medium">
-            Explore Guides
+            Follow the Journey
           </a>
           <a href="/products"
              class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-center font-medium">
@@ -42,7 +42,6 @@ import Layout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── Entry Cards Section ──────────────────────────────────── -->
-  <!-- 浅蓝背景，与 Hero 白色自然区分 -->
   <section class="bg-blue-50 px-8 md:px-20 py-16">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
 
@@ -66,11 +65,11 @@ import Layout from '../layouts/BaseLayout.astro';
         </a>
       </div>
 
-      <!-- Resources -->
+      <!-- Nomad Hub -->
       <div class="bg-white rounded-2xl shadow-md p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 cursor-pointer">
         <img src="/assets/icons/resources-icon.svg" alt="" class="w-12 h-12 mb-4" />
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">Tools & Guides</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Find curated guides, tools, and tips to help you succeed as a digital nomad entrepreneur.</p>
+        <h3 class="text-xl font-semibold text-orange-500 mb-2">Nomad Hub</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Weekly news, free toolkits, and curated guides for digital nomads and remote workers.</p>
         <a href="/resources" class="mt-5 inline-block text-orange-500 font-medium text-sm hover:underline">
           Enter &rarr;
         </a>
@@ -79,121 +78,123 @@ import Layout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ─── News Section ─────────────────────────────────────────── -->
-  <!-- 回到白色，形成节奏 -->
+  <!-- ─── Building in Public Section ──────────────────────────── -->
   <section class="bg-white px-8 md:px-20 py-20">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Latest Digital Nomad News</h2>
-      <p class="text-gray-400 text-center mb-10 text-sm">Curated updates for remote workers and entrepreneurs</p>
+      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Building in Public</h2>
+      <p class="text-gray-400 text-center mb-10 text-sm">Real progress, real mistakes — updated daily</p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-orange-500 text-xs font-semibold uppercase tracking-wide">AI Tool</span>
-          <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">New Notion Plugin for Remote Productivity</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Boost your workflow with the latest plugin optimized for digital nomads.</p>
+        <a href="/blog/day-5" class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 block">
+          <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">Day 5</span>
+          <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">I Built a Website From Scratch. And I Cannot Code.</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Five days in. A live website, two products on Gumroad, and one mistake that broke everything.</p>
+          <span class="mt-4 inline-block text-blue-600 text-sm font-medium">Read more →</span>
+        </a>
+
+        <a href="/blog/day-8" class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 block">
+          <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">Day 8</span>
+          <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">I Redesigned My Homepage. Without Knowing CSS.</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Tailwind installed, a real domain purchased, and more broken things fixed than I can count.</p>
+          <span class="mt-4 inline-block text-blue-600 text-sm font-medium">Read more →</span>
+        </a>
+
+        <div class="bg-gray-100 rounded-2xl p-6 border border-dashed border-gray-300 flex flex-col items-center justify-center text-center min-h-[200px]">
+          <span class="text-gray-300 text-4xl mb-3">✍️</span>
+          <h3 class="text-base font-semibold text-gray-400 mb-1">Day 9 — In Progress</h3>
+          <p class="text-gray-400 text-sm">Next update coming soon.</p>
         </div>
 
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-green-600 text-xs font-semibold uppercase tracking-wide">Startup</span>
-          <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">Remote Work Tools Funded $2M</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A startup raises $2M to develop tools supporting remote entrepreneurs worldwide.</p>
-        </div>
-
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">Tech Update</span>
-          <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">GitHub Trending: 5 Remote Work Repos</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Top trending repos this week for freelancers and digital nomads.</p>
-        </div>
-
+      </div>
+      <div class="text-center mt-10">
+        <a href="/journey" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-sm font-medium">
+          View Full Journey →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── Tools Section ────────────────────────────────────────── -->
-  <!-- 浅灰背景，再次切换 -->
+  <!-- ─── Nomad Hub Preview Section ────────────────────────────── -->
   <section class="bg-gray-100 px-8 md:px-20 py-20">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Recommended Tools</h2>
-      <p class="text-gray-400 text-center mb-10 text-sm">Hand-picked tools to build your nomad workflow</p>
-      <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Nomad Hub</h2>
+      <p class="text-gray-400 text-center mb-10 text-sm">Weekly picks — tools, news, and free resources for digital nomads</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 text-center border border-gray-100">
-          <img src="/assets/icons/tool1.svg" alt="" class="w-12 h-12 mx-auto mb-4" />
-          <h3 class="font-semibold text-gray-800 text-sm mb-1">AI Content Assistant</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Automate your writing and workflow efficiently.</p>
+        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
+          <span class="text-orange-500 text-xs font-semibold uppercase tracking-wide">Free Toolkit</span>
+          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">Tax Guide for Digital Nomads</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">A lightweight guide to understanding your tax situation as a location-independent worker.</p>
+          <a href="/resources" class="mt-4 inline-block text-orange-500 text-sm font-medium hover:underline">Get it free →</a>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 text-center border border-gray-100">
-          <img src="/assets/icons/tool2.svg" alt="" class="w-12 h-12 mx-auto mb-4" />
-          <h3 class="font-semibold text-gray-800 text-sm mb-1">Notion Templates</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Organize your projects and digital products easily.</p>
+        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
+          <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">Free Toolkit</span>
+          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">Remote Work Starter Pack</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">Curated list of platforms, tools, and communities to kickstart your remote career.</p>
+          <a href="/resources" class="mt-4 inline-block text-blue-600 text-sm font-medium hover:underline">Get it free →</a>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 text-center border border-gray-100">
-          <img src="/assets/icons/tool3.svg" alt="" class="w-12 h-12 mx-auto mb-4" />
-          <h3 class="font-semibold text-gray-800 text-sm mb-1">Remote Job Boards</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Find verified remote work opportunities worldwide.</p>
+        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
+          <span class="text-green-600 text-xs font-semibold uppercase tracking-wide">Weekly News</span>
+          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">This Week in Nomad Life</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">The most relevant AI, remote work, and entrepreneurship updates — curated every week.</p>
+          <a href="/resources" class="mt-4 inline-block text-green-600 text-sm font-medium hover:underline">Read this week →</a>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 text-center border border-gray-100">
-          <img src="/assets/icons/tool4.svg" alt="" class="w-12 h-12 mx-auto mb-4" />
-          <h3 class="font-semibold text-gray-800 text-sm mb-1">Time Tracking App</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Manage your freelance projects and productivity.</p>
-        </div>
-
+      </div>
+      <div class="text-center mt-10">
+        <a href="/resources" class="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition text-sm font-medium">
+          Explore Nomad Hub →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── Products Section ─────────────────────────────────────── -->
-  <!-- 回到白色 -->
+  <!-- ─── Featured Products Section ───────────────────────────── -->
   <section class="bg-white px-8 md:px-20 py-20">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Featured Products</h2>
       <p class="text-gray-400 text-center mb-10 text-sm">Digital tools built for nomads, by a nomad</p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
         <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
-          <h3 class="text-base font-semibold text-gray-800 mb-1">The Tao of Flow</h3>
-          <p class="text-orange-500 text-sm font-medium mb-3">$19 — Notion Template</p>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">Boost productivity using Taoist principles of flow and balance.</p>
-          <a href="/products/tao-of-flow"
+          <span class="text-green-600 text-xs font-semibold uppercase tracking-wide mb-2">Free</span>
+          <h3 class="text-base font-semibold text-gray-800 mb-1">Digital Nomad Prompt Pack — Lite</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">5 essential AI prompts to help you find trending topics, write content, and grow your audience.</p>
+          <a href="https://zephyrai.gumroad.com"
+             target="_blank"
+             class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition text-center text-sm font-medium">
+            Get for Free
+          </a>
+        </div>
+
+        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
+          <span class="text-orange-500 text-xs font-semibold uppercase tracking-wide mb-2">$19</span>
+          <h3 class="text-base font-semibold text-gray-800 mb-1">Digital Nomad Content Creation Prompt Pack</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">20+ curated AI prompts for trending topic research, X threads, blog writing, and product launches.</p>
+          <a href="https://zephyrai.gumroad.com"
+             target="_blank"
              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-center text-sm font-medium">
             Buy Now
           </a>
         </div>
 
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
-          <h3 class="text-base font-semibold text-gray-800 mb-1">7 Habits 12-Week Template</h3>
-          <p class="text-orange-500 text-sm font-medium mb-3">$19 — Notion Template</p>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">Implement Covey's 7 habits with a structured 12-week system.</p>
-          <a href="/products/7-habits"
-             class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-center text-sm font-medium">
-            Buy Now
-          </a>
-        </div>
-
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
-          <h3 class="text-base font-semibold text-gray-800 mb-1">Remote Productivity Pack</h3>
-          <p class="text-orange-500 text-sm font-medium mb-3">$29 — Bundle</p>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">Collection of templates & tools built for digital nomads on the go.</p>
-          <a href="/products/productivity-pack"
-             class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-center text-sm font-medium">
-            Buy Now
-          </a>
-        </div>
-
+      </div>
+      <div class="text-center mt-10">
+        <a href="/products" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-sm font-medium">
+          View All Products →
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ─── Newsletter / Community Section ──────────────────────── -->
-  <!-- 深蓝背景强收尾，高 CTA 权重 -->
   <section class="bg-slate-700 py-20 px-8 md:px-20">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-white mb-3">Join the Community</h2>
       <p class="text-blue-100 mb-8 text-base leading-relaxed">
-        Subscribe to get the latest digital nomad tips, tools, and product updates — no spam, ever.
+        Subscribe to get weekly nomad news, free toolkits, and product updates — no spam, ever.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <input
