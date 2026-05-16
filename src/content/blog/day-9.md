@@ -3,7 +3,7 @@ title: "Day 9 — I Stopped Chasing AI Tools And Started Building Workflows."
 description: "No launch. No followers. No revenue. Just the beginning of my Personal AI OS."
 pubDate: "2026-05-14"
 slug: "day-9"
-heroImage: "/assets/blog-placeholder-3.jpg"
+heroImage: "../../assets/day-series-hero.jpg"
 ---
 
 Day 9.
