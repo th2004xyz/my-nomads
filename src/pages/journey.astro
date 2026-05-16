@@ -2,149 +2,132 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+// 自动读取所有 blog 文章，按日期正序（从旧到新）
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(a.data.pubDate).getTime() - new Date(b.data.pubDate).getTime()
+);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title="Journey | Evan" description="Building my digital nomad life in public — every step documented." />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section class="journey-hero">
-				<h1>Building in Public</h1>
-				<p>Every step of my journey from $0 to a self-sustaining digital nomad business — documented in real time. The wins, the failures, and everything in between.</p>
-			</section>
+  <head>
+    <BaseHead title="Journey | Evan" description="Building my digital nomad life in public — every step documented." />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="journey-hero">
+        <h1>Building in Public</h1>
+        <p>Every step of my journey from $0 to a self-sustaining digital nomad business — documented in real time. The wins, the failures, and everything in between.</p>
+      </section>
 
-			<section class="journey-list">
+      <section class="journey-list">
+        {sortedPosts.map((post, index) => (
+          <article class={`journey-card${index === 0 ? ' pinned' : ''}`}>
+            <div class="journey-meta">
+              <span class="tag">{post.data.title.split('—')[0].trim().split(' ').slice(0, 2).join(' ')}</span>
+              <span class="date">
+                {new Date(post.data.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </span>
+            </div>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.id}`}>Read more →</a>
+          </article>
+        ))}
 
-				<!-- Day 1 Post -->
-				<article class="journey-card pinned">
-					<div class="journey-meta">
-						<span class="tag">Day 1</span>
-						<span class="date">May 7, 2026</span>
-					</div>
-					<h2>Why I quit Honeywell and what I'm building</h2>
-					<p>5 years at a stable corporate job. Then I quit. This is where the journey starts — no audience, no proven results, just the process.</p>
-					<a href="/blog/day-1">Read more →</a>
-				</article>
-
-				<!-- Day 5 Post -->
-				<article class="journey-card">
-					<div class="journey-meta">
-						<span class="tag">Day 5</span>
-						<span class="date">May 11, 2026</span>
-					</div>
-					<h2>I Built a Website From Scratch. And I Can't Code.</h2>
-					<p>Five days in. I launched my personal site — Home, Journey, Shop, About, all live. I had never written a single line of code before this week. Here's what actually happened, including the mistake that broke everything.</p>
-					<a href="/blog/day-5">Read more →</a>
-				</article>
-
-				<!-- Day 8 Post -->
-				<article class="journey-card">
-					<div class="journey-meta">
-						<span class="tag">Day 8</span>
-						<span class="date">May 13, 2026</span>
-					</div>
-					<h2>I Redesigned My Homepage. Without Knowing CSS.</h2>
-					<p>Tailwind installed, a real domain purchased, and more broken things fixed than I can count.</p>
-					<a href="/blog/day-8">Read more →</a>
-				</article>
-
-				<!-- Day 9 Post -->
-				<article class="journey-card">
-					<div class="journey-meta">
-						<span class="tag">Day 9</span>
-						<span class="date">May 14, 2026</span>
-					</div>
-					<h2>I Stopped Chasing AI Tools And Started Building Workflows.</h2>
-					<p>No launch. No followers. No revenue. Just the beginning of my Personal AI OS.</p>
-					<a href="/blog/day-9">Read more →</a>
-				</article>
-
-				<!-- Placeholder for future posts -->
-				<article class="journey-card">
-					<div class="journey-meta">
-						<span class="tag">Coming soon</span>
-					</div>
-					<h2>More updates on the way...</h2>
-					<p>I document everything as it happens. Check back soon or follow me on X for daily updates.</p>
-					<a href="https://twitter.com/zephyr_8379" target="_blank">Follow on X →</a>
-				</article>
-
-			</section>
-		</main>
-		<Footer />
-	</body>
+        <!-- 占位符：永远显示在最后 -->
+        <article class="journey-card coming-soon">
+          <div class="journey-meta">
+            <span class="tag coming">Coming soon</span>
+          </div>
+          <h2>More updates on the way...</h2>
+          <p>I document everything as it happens. Check back soon or follow me on X for daily updates.</p>
+          <a href="https://twitter.com/zephyr_8379" target="_blank">Follow on X →</a>
+        </article>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	main {
-		max-width: 860px;
-		margin: 0 auto;
-		padding: 2rem 1rem;
-	}
-	.journey-hero {
-		text-align: center;
-		padding: 3rem 0 2rem;
-	}
-	.journey-hero h1 {
-		font-size: 2.5rem;
-		font-weight: 800;
-		margin-bottom: 1rem;
-	}
-	.journey-hero p {
-		font-size: 1.1rem;
-		color: #666;
-		max-width: 600px;
-		margin: 0 auto;
-	}
-	.journey-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		padding: 2rem 0;
-	}
-	.journey-card {
-		border: 1px solid #eee;
-		border-radius: 10px;
-		padding: 1.5rem 2rem;
-	}
-	.journey-card.pinned {
-		border-color: #000;
-		background: #fafafa;
-	}
-	.journey-meta {
-		display: flex;
-		gap: 1rem;
-		align-items: center;
-		margin-bottom: 0.75rem;
-	}
-	.tag {
-		background: #000;
-		color: #fff;
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		font-size: 0.8rem;
-		font-weight: 600;
-	}
-	.date {
-		color: #999;
-		font-size: 0.9rem;
-	}
-	.journey-card h2 {
-		font-size: 1.3rem;
-		margin-bottom: 0.5rem;
-	}
-	.journey-card p {
-		color: #555;
-		margin-bottom: 1rem;
-		line-height: 1.6;
-	}
-	.journey-card a {
-		font-weight: 600;
-		color: #000;
-	}
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .journey-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .journey-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  .journey-hero p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .journey-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+  .journey-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+  }
+  .journey-card.pinned {
+    border-color: #000;
+    background: #fafafa;
+  }
+  .journey-card.coming-soon {
+    border-style: dashed;
+    border-color: #ccc;
+    background: #fafafa;
+  }
+  .journey-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .tag {
+    background: #000;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .tag.coming {
+    background: #ccc;
+    color: #555;
+  }
+  .date {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  .journey-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .journey-card p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .journey-card a {
+    font-weight: 600;
+    color: #000;
+  }
 </style>
