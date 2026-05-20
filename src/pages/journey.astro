@@ -1,20 +1,19 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/shared/Header.astro';
+import Footer from '../components/shared/Footer.astro';
 import { getCollection } from 'astro:content';
 
-// 自动读取所有 blog 文章，按日期正序（从旧到新）
-const allPosts = await getCollection('blog');
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(a.data.pubDate).getTime() - new Date(b.data.pubDate).getTime()
+const allBuilds = await getCollection('builds');
+const sortedBuilds = [...allBuilds].sort(
+  (a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime(),
 );
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Journey | Evan" description="Building my digital nomad life in public — every step documented." />
+    <BaseHead title="Journey | Zephyr" description="Building my digital nomad life in public — every step documented." />
   </head>
   <body>
     <Header />
@@ -25,17 +24,17 @@ const sortedPosts = allPosts.sort(
       </section>
 
       <section class="journey-list">
-        {sortedPosts.map((post, index) => (
-          <article class={`journey-card${index === 0 ? ' pinned' : ''}`}>
+        {sortedBuilds.map((entry, index) => (
+          <article class={`journey-card${index === sortedBuilds.length - 1 ? ' pinned' : ''}`}>
             <div class="journey-meta">
-              <span class="tag">{post.data.title.split('—')[0].trim().split(' ').slice(0, 2).join(' ')}</span>
+              <span class="tag">{entry.data.title.split('—')[0].trim().split(' ').slice(0, 2).join(' ')}</span>
               <span class="date">
-                {new Date(post.data.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                {entry.data.pubDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </span>
             </div>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            <a href={`/blog/${post.id}`}>Read more →</a>
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.description}</p>
+            <a href={`/builds/${entry.id}/`}>Read more →</a>
           </article>
         ))}
 
@@ -71,9 +70,12 @@ const sortedPosts = allPosts.sort(
   }
   .journey-hero p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--color-text-muted);
     max-width: 600px;
     margin: 0 auto;
+  }
+  .journey-hero h1 {
+    color: var(--color-white);
   }
   .journey-list {
     display: flex;
@@ -82,18 +84,17 @@ const sortedPosts = allPosts.sort(
     padding: 2rem 0;
   }
   .journey-card {
-    border: 1px solid #eee;
+    border: 1px solid var(--color-border);
     border-radius: 10px;
     padding: 1.5rem 2rem;
+    background: var(--color-card);
   }
   .journey-card.pinned {
-    border-color: #000;
-    background: #fafafa;
+    border-color: var(--color-blue);
   }
   .journey-card.coming-soon {
     border-style: dashed;
-    border-color: #ccc;
-    background: #fafafa;
+    border-color: var(--color-border-soft);
   }
   .journey-meta {
     display: flex;
@@ -102,7 +103,7 @@ const sortedPosts = allPosts.sort(
     margin-bottom: 0.75rem;
   }
   .tag {
-    background: #000;
+    background: var(--color-blue);
     color: #fff;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
@@ -114,20 +115,21 @@ const sortedPosts = allPosts.sort(
     color: #555;
   }
   .date {
-    color: #999;
+    color: var(--color-text-faint);
     font-size: 0.9rem;
   }
   .journey-card h2 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: var(--color-white);
   }
   .journey-card p {
-    color: #555;
+    color: var(--color-text-muted);
     margin-bottom: 1rem;
     line-height: 1.6;
   }
   .journey-card a {
     font-weight: 600;
-    color: #000;
+    color: var(--color-blue);
   }
 </style>

@@ -1,0 +1,22 @@
+---
+// src/components/Footer.astro
+// Site footer with social links and runtime version info.
+
+const links = [
+  { label: "✕ Follow on X", href: "https://twitter.com/zephyr_8379" },
+  { label: "⋈ GitHub",      href: "https://github.com/th2004xyz" },
+  { label: "☰ RSS",         href: "/rss.xml" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-links">
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </div>
+  <p>Zephyr • AI-Native Digital Life Hub</p>
+  <p>Built in public • v1.0 • © {year}</p>
+</footer>

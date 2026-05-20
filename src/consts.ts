@@ -1,5 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Evan | Digital nomad';
-export const SITE_DESCRIPTION = 'Building my digital nomad life in public. From 0 to living free — selling digital products, learning to code, documenting every step.';
+export const SITE_TITLE = 'Zephyr';
+export const SITE_DESCRIPTION =
+	'Workflows, runtime systems, AI tools, and digital leverage for solo builders and digital nomads.';
+export const SITE_URL = 'https://zephyrdn.com';

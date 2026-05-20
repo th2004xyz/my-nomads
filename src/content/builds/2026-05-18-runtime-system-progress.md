@@ -2,6 +2,7 @@
 title: "Day 8 — I Redesigned My Homepage. Without Knowing CSS."
 description: "Tailwind installed, a real domain purchased, and more broken things fixed than I can count."
 pubDate: "2026-05-13"
+badgeType: experiment
 heroImage: "../../assets/day-series-hero.jpg"
 ---
 
@@ -90,4 +91,3 @@ Still showing the zeros.
 ---
 
 *Next up: connecting zephyrdn.com to the live site, fixing the remaining page layouts, and getting the first real visitor who isn't me.*
-

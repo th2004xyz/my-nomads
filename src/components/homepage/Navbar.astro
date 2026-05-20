@@ -1,0 +1,26 @@
+---
+// src/components/Navbar.astro
+// Fixed top navigation bar.
+
+const navLinks = [
+  { label: "Vision",    href: "#vision"    },
+  { label: "Builds",    href: "#builds"    },
+  { label: "Knowledge", href: "#knowledge" },
+  { label: "Kits",      href: "#kits"      },
+  { label: "Community", href: "#community" },
+];
+---
+
+<nav class="nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">Z</div>
+      Zephyr
+    </a>
+    <div class="nav-links">
+      {navLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+  </div>
+</nav>

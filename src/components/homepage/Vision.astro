@@ -1,0 +1,48 @@
+---
+// src/components/Vision.astro
+// Section 02 — benefit-focused feature cards.
+
+const features = [
+  {
+    icon: "📋",
+    title: "Organize Your AI Workflow",
+    description:
+      "Stop drowning in tabs. Structure your prompts, tools, and outputs into repeatable systems.",
+  },
+  {
+    icon: "🏢",
+    title: "Build a One-Person Online Business",
+    description:
+      "From idea to revenue. Calm, automated operations designed for solo creators.",
+  },
+  {
+    icon: "🔍",
+    title: "Discover Useful AI Systems",
+    description:
+      "Curated patterns that actually work. No hype, just proven architectural blueprints.",
+  },
+  {
+    icon: "🌐",
+    title: "Run Your Digital Life with AI",
+    description:
+      "Personal knowledge management, content pipelines, and life admin — automated.",
+  },
+];
+---
+
+<section class="section" id="vision">
+  <div class="section-header">
+    <div class="section-label">Focus on Value</div>
+    <h2 class="section-title">What Can Zephyr Help You Build?</h2>
+  </div>
+
+  <div class="card-grid">
+    {features.map((f) => (
+      <div class="card feature-card">
+        <div class="feature-icon">{f.icon}</div>
+        <h3>{f.title}</h3>
+        <p>{f.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

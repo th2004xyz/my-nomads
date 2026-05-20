@@ -1,0 +1,64 @@
+---
+// src/components/RuntimeKits.astro
+// Section 04b — premium runtime kit conversion point, anchored below KnowledgeSystems.
+// Rendered as a sub-section with a divider, tied to #kits anchor.
+
+interface Kit {
+  typeIcon: string;
+  typeLabel: string;
+  title: string;
+  description: string;
+  features: string[];
+  price: string;
+  linkLabel: string;
+  href: string;
+}
+
+const kits: Kit[] = [
+  {
+    typeIcon: "🚀",
+    typeLabel: "Nomad Systems #001",
+    title: "Zephyr Nomad Runtime Kit",
+    description:
+      "Everything you need to launch an AI-enhanced one-person business in 7 days.",
+    features: [
+      "✓ 7 AI workflow templates",
+      "✓ SOP checklist system",
+      "✓ Revenue tracker dashboard",
+    ],
+    price: "$29 • Instant Access",
+    linkLabel: "Get Kit →",
+    href: "#",
+  },
+];
+---
+
+<div class="kits-divider" id="kits">
+  <h3>💎 Runtime Kits</h3>
+  <p>Turn signals into systems. Premium, tested, and ready to deploy.</p>
+
+  <div class="kits-grid">
+    {kits.map((kit) => (
+      <div class="card knowledge-card highlight-card">
+        <div class="knowledge-type">
+          <span>{kit.typeIcon}</span>
+          <span>{kit.typeLabel}</span>
+        </div>
+
+        <h3>{kit.title}</h3>
+        <p>{kit.description}</p>
+
+        <div class="kit-features">
+          {kit.features.map((f) => (
+            <span>{f}</span>
+          ))}
+        </div>
+
+        <div class="knowledge-meta">
+          <span class="knowledge-tag">{kit.price}</span>
+          <a href={kit.href} class="knowledge-link">{kit.linkLabel}</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

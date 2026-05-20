@@ -1,0 +1,37 @@
+---
+// src/components/CTACommunity.astro
+// Section 05 — Join the Build / community CTA with builder note and value list.
+
+const ctaItems = [
+  "Weekly AI workflow discoveries",
+  "Early access to runtime kits",
+  "Behind-the-scenes build logs",
+  "Community signal filtering",
+];
+---
+
+<section class="cta-section" id="community">
+  <div class="builder-note">
+    <span class="note-badge">📝 Runtime Log</span>
+    <p>
+      "I don't build AI tools. I build systems that let me run my life with less
+      friction. Zephyr is just the public trace of that process."
+    </p>
+  </div>
+
+  <h2>Join the Evolution</h2>
+  <p>Not a newsletter. A runtime partnership.</p>
+
+  <div class="cta-list">
+    {ctaItems.map((item) => (
+      <div class="cta-item">
+        <span class="cta-check">→</span>
+        <span>{item}</span>
+      </div>
+    ))}
+  </div>
+
+  <a href="#" class="cta-button">Join →</a>
+
+  <div class="cta-stats">1,247 builders • 94% open rate</div>
+</section>

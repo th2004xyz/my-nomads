@@ -1,52 +1,80 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/shared/Header.astro';
+import Footer from '../components/shared/Footer.astro';
 ---
 
-<Layout
-	title="About Evan"
-	description="From Honeywell to Digital Nomad — my story"
-	pubDate={new Date('May 09 2026')}
-	heroImage="/blog-placeholder-about.jpg"
+<BaseLayout
+	title="About | Zephyr"
+	description="From Honeywell to digital nomad — building AI-native workflows and systems in public."
 >
-	<h1>Hey, I'm Evan.</h1>
+	<Header />
+	<main class="about-page">
+		<h1>Hey, I'm Evan.</h1>
 
-	<p>I spent 5 years at Honeywell — in sales and project management. Good salary. International clients. A career that looked great on paper.</p>
+		<p>I spent 5 years at Honeywell — in sales and project management. Good salary. International clients. A career that looked great on paper.</p>
 
-	<p>And every Sunday night, a quiet dread of Monday morning.</p>
+		<p>And every Sunday night, a quiet dread of Monday morning.</p>
 
-	<p>In 2025, I made a decision: I quit.</p>
+		<p>In 2025, I made a decision: I quit.</p>
 
-	<p>Not because I had it all figured out. I didn't. I quit because I believed — and still believe — that in the age of AI, the people who create will always have a place. The people who just execute? Less certain.</p>
+		<p>Not because I had it all figured out. I didn't. I quit because I believed — and still believe — that in the age of AI, the people who create will always have a place. The people who just execute? Less certain.</p>
 
-	<p>So I moved to Tokyo. And I started building.</p>
+		<p>So I moved to Tokyo. And I started building.</p>
 
-	<p>I'm learning to code from scratch. Building this website myself. Selling digital products on Gumroad. Using AI as my co-founder, researcher, and editor. Some things work. A lot of things don't. I'm documenting all of it — publicly, honestly, in real time.</p>
+		<p>I'm learning to code from scratch. Building this website myself. Selling digital products on Gumroad. Using AI as my co-founder, researcher, and editor. Some things work. A lot of things don't. I'm documenting all of it — publicly, honestly, in real time.</p>
 
-	<p>This site is that documentation.</p>
+		<p>This site is that documentation.</p>
 
-	<p>If you're thinking about making a similar leap — or you're already on the path and want tools that actually work — you're in the right place.</p>
+		<p>If you're thinking about making a similar leap — or you're already on the path and want tools that actually work — you're in the right place.</p>
 
-	<h2>What I'm building</h2>
-	<ul>
-		<li>A digital product business (templates, toolkits, workflows)</li>
-		<li>An independent website with real SEO</li>
-		<li>A public record of the whole process — wins, failures, and everything in between</li>
-	</ul>
+		<h2>What I'm building</h2>
+		<ul>
+			<li>A digital product business (templates, toolkits, workflows)</li>
+			<li>An independent website with real SEO</li>
+			<li>A public record of the whole process — wins, failures, and everything in between</li>
+		</ul>
 
-	<h2>Current status</h2>
-	<ul>
-		<li>📅 Day 8 of building in public</li>
-		<li>🌐 Website: live at <a href="https://zephyrdn.com" target="_blank">zephyrdn.com</a></li>
-		<li>🛒 Products: live on <a href="https://zephyrai.gumroad.com" target="_blank">Gumroad</a></li>
-		<li>💰 Revenue: $0 — showing the zeros until it changes</li>
-		<li>📍 Based in: Tokyo, Japan 🇯🇵</li>
-	</ul>
+		<h2>Current status</h2>
+		<ul>
+			<li>📅 Day 8 of building in public</li>
+			<li>🌐 Website: live at <a href="https://zephyrdn.com" target="_blank" rel="noopener noreferrer">zephyrdn.com</a></li>
+			<li>🛒 Products: live on <a href="https://zephyrai.gumroad.com" target="_blank" rel="noopener noreferrer">Gumroad</a></li>
+			<li>💰 Revenue: $0 — showing the zeros until it changes</li>
+			<li>📍 Based in: Tokyo, Japan 🇯🇵</li>
+		</ul>
 
-	<h2>Where to find me</h2>
-	<ul>
-		<li>X (Twitter): <a href="https://twitter.com/zephyr_8379" target="_blank">@zephyr_8379</a></li>
-		<li>Gumroad: <a href="https://zephyrai.gumroad.com" target="_blank">zephyrai.gumroad.com</a></li>
-		<li>Email: Yakovxia@gmail.com</li>
-	</ul>
+		<h2>Where to find me</h2>
+		<ul>
+			<li>X (Twitter): <a href="https://twitter.com/zephyr_8379" target="_blank" rel="noopener noreferrer">@zephyr_8379</a></li>
+			<li>Gumroad: <a href="https://zephyrai.gumroad.com" target="_blank" rel="noopener noreferrer">zephyrai.gumroad.com</a></li>
+			<li>Email: Yakovxia@gmail.com</li>
+		</ul>
+	</main>
+	<Footer />
+</BaseLayout>
 
-</Layout>
+<style>
+	.about-page {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 4rem;
+		color: var(--color-text-muted);
+		line-height: 1.7;
+	}
+	.about-page h1,
+	.about-page h2 {
+		color: var(--color-white);
+		margin: 1.5rem 0 0.75rem;
+	}
+	.about-page h1 {
+		margin-top: 0;
+	}
+	.about-page a {
+		color: var(--color-blue);
+	}
+	.about-page ul {
+		padding-left: 1.25rem;
+		margin-bottom: 1rem;
+	}
+</style>

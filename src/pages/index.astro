@@ -1,214 +1,33 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+// src/pages/index.astro
+// Homepage — assembles all section components in order.
 
-// 自动读取所有 blog 文章，按日期倒序，取最新3篇
-const allPosts = await getCollection('blog');
-const recentPosts = allPosts
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 3);
+import BaseLayout       from "../layouts/BaseLayout.astro";
+import Navbar           from "../components/homepage/Navbar.astro";
+import Hero             from "../components/homepage/Hero.astro";
+import Vision           from "../components/homepage/Vision.astro";
+import CurrentBuilds    from "../components/homepage/CurrentBuilds.astro";
+import KnowledgeSystems from "../components/homepage/KnowledgeSystems.astro";
+import RuntimeKits      from "../components/homepage/RuntimeKits.astro";
+import CTACommunity     from "../components/homepage/CTACommunity.astro";
+import Footer           from "../components/shared/Footer.astro";
 ---
+<BaseLayout
+  title="Zephyr — AI-Native Digital Life Hub"
+  description="Workflows, runtime systems, AI tools, and digital leverage for solo builders and digital nomads."
+>
+  <Navbar />
+  <Hero />
+  <Vision />
+  <CurrentBuilds />
 
-<Layout>
+  <!-- KnowledgeSystems contains its own <section> wrapper -->
+  <!-- RuntimeKits renders as a sub-section (.kits-divider) inside the knowledge flow -->
+  <KnowledgeSystems />
+  <div class="section" style="padding-top: 0; max-width: var(--max-w); margin: 0 auto;">
+    <RuntimeKits />
+  </div>
 
-  <!-- ─── Hero Section ─────────────────────────────────────────── -->
-  <section class="bg-white pt-24 pb-20 px-8 md:px-20">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-
-      <!-- Text -->
-      <div class="flex-1 max-w-xl">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-600 mb-5 leading-tight">
-          Welcome to Zephyr — Your Digital Nomad Base.
-          <span class="block text-gray-800 mt-1">The AI Age Is Here. Build Your Free Life Now.</span>
-        </h1>
-        <p class="text-gray-600 text-lg md:text-xl mb-8 leading-relaxed">
-          Whether you're 15 or 85, AI amplifies your creativity and sets you free.<br />
-          AI news that matters. Nomad skills from zero to advanced. Tools that actually work.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/journey"
-             class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-500 transition text-center font-medium">
-            Follow the Journey
-          </a>
-          <a href="/products"
-             class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-center font-medium">
-            Browse Products
-          </a>
-        </div>
-      </div>
-
-      <!-- Illustration -->
-      <div class="flex-1 flex justify-center">
-        <img
-          src="/assets/hero-illustration.png"
-          alt="Digital Nomad Illustration"
-          class="rounded-2xl max-w-full w-full md:max-w-md"
-        />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── Entry Cards Section ──────────────────────────────────── -->
-  <section class="bg-blue-50 px-8 md:px-20 py-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
-
-      <!-- Journey -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 cursor-pointer">
-        <img src="/assets/icons/journey-icon.svg" alt="" class="w-12 h-12 mb-4" />
-        <h3 class="text-xl font-semibold text-blue-600 mb-2">Building in Public</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Follow my step-by-step digital nomad journey and learn from real experiences.</p>
-        <a href="/journey" class="mt-5 inline-block text-blue-600 font-medium text-sm hover:underline">
-          Enter &rarr;
-        </a>
-      </div>
-
-      <!-- Shop -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 cursor-pointer">
-        <img src="/assets/icons/shop-icon.svg" alt="" class="w-12 h-12 mb-4" />
-        <h3 class="text-xl font-semibold text-green-600 mb-2">Digital Products</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Explore AI-powered templates, tools, and resources to boost your productivity.</p>
-        <a href="/products" class="mt-5 inline-block text-green-600 font-medium text-sm hover:underline">
-          Enter &rarr;
-        </a>
-      </div>
-
-      <!-- Nomad Hub -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 cursor-pointer">
-        <img src="/assets/icons/resources-icon.svg" alt="" class="w-12 h-12 mb-4" />
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">Nomad Hub</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Weekly news, free toolkits, and curated guides for digital nomads and remote workers.</p>
-        <a href="/resources" class="mt-5 inline-block text-orange-500 font-medium text-sm hover:underline">
-          Enter &rarr;
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── Building in Public Section ──────────────────────────── -->
-  <section class="bg-white px-8 md:px-20 py-20">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Building in Public</h2>
-      <p class="text-gray-400 text-center mb-10 text-sm">Real progress, real mistakes — updated daily</p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-        {recentPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 block">
-            <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">
-              {new Date(post.data.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-            </span>
-            <h3 class="text-base font-semibold text-gray-800 mt-2 mb-2 leading-snug">{post.data.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{post.data.description}</p>
-            <span class="mt-4 inline-block text-blue-600 text-sm font-medium">Read more →</span>
-          </a>
-        ))}
-
-      </div>
-      <div class="text-center mt-10">
-        <a href="/journey" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-sm font-medium">
-          View Full Journey →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Nomad Hub Preview Section ────────────────────────────── -->
-  <section class="bg-gray-100 px-8 md:px-20 py-20">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Nomad Hub</h2>
-      <p class="text-gray-400 text-center mb-10 text-sm">Weekly picks — tools, news, and free resources for digital nomads</p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-orange-500 text-xs font-semibold uppercase tracking-wide">Free Toolkit</span>
-          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">Tax Guide for Digital Nomads</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">A lightweight guide to understanding your tax situation as a location-independent worker.</p>
-          <a href="/resources" class="mt-4 inline-block text-orange-500 text-sm font-medium hover:underline">Get it free →</a>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-blue-600 text-xs font-semibold uppercase tracking-wide">Free Toolkit</span>
-          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">Remote Work Starter Pack</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Curated list of platforms, tools, and communities to kickstart your remote career.</p>
-          <a href="/resources" class="mt-4 inline-block text-blue-600 text-sm font-medium hover:underline">Get it free →</a>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100">
-          <span class="text-green-600 text-xs font-semibold uppercase tracking-wide">Weekly News</span>
-          <h3 class="font-semibold text-gray-800 text-sm mt-2 mb-2">This Week in Nomad Life</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">The most relevant AI, remote work, and entrepreneurship updates — curated every week.</p>
-          <a href="/resources" class="mt-4 inline-block text-green-600 text-sm font-medium hover:underline">Read this week →</a>
-        </div>
-
-      </div>
-      <div class="text-center mt-10">
-        <a href="/resources" class="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition text-sm font-medium">
-          Explore Nomad Hub →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Featured Products Section ───────────────────────────── -->
-  <section class="bg-white px-8 md:px-20 py-20">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Featured Products</h2>
-      <p class="text-gray-400 text-center mb-10 text-sm">Digital tools built for nomads, by a nomad</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
-          <span class="text-green-600 text-xs font-semibold uppercase tracking-wide mb-2">Free</span>
-          <h3 class="text-base font-semibold text-gray-800 mb-1">Digital Nomad Prompt Pack — Lite</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">5 essential AI prompts to help you find trending topics, write content, and grow your audience.</p>
-          <a href="https://zephyrai.gumroad.com"
-             target="_blank"
-             class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition text-center text-sm font-medium">
-            Get for Free
-          </a>
-        </div>
-
-        <div class="bg-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-gray-100 flex flex-col">
-          <span class="text-orange-500 text-xs font-semibold uppercase tracking-wide mb-2">$19</span>
-          <h3 class="text-base font-semibold text-gray-800 mb-1">Digital Nomad Content Creation Prompt Pack</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">20+ curated AI prompts for trending topic research, X threads, blog writing, and product launches.</p>
-          <a href="https://zephyrai.gumroad.com"
-             target="_blank"
-             class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-center text-sm font-medium">
-            Buy Now
-          </a>
-        </div>
-
-      </div>
-      <div class="text-center mt-10">
-        <a href="/products" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-sm font-medium">
-          View All Products →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Newsletter / Community Section ──────────────────────── -->
-  <section class="bg-slate-700 py-20 px-8 md:px-20">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-3">Join the Community</h2>
-      <p class="text-blue-100 mb-8 text-base leading-relaxed">
-        Subscribe to get weekly nomad news, free toolkits, and product updates — no spam, ever.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          class="px-4 py-3 rounded-lg border border-slate-400 flex-1 max-w-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
-        />
-        <button
-          type="button"
-          class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition shadow-md"
-          onclick="alert('Thanks for subscribing!')">
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </section>
-
-</Layout>
+  <CTACommunity />
+  <Footer />
+</BaseLayout>
