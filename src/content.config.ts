@@ -4,17 +4,12 @@ import { z } from 'astro/zod';
 
 const builds = defineCollection({
 	loader: glob({ base: './src/content/builds', pattern: '**/*.{md,mdx}' }),
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			description: z.string(),
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: z.optional(image()),
-			badgeType: z
-				.enum(['log', 'experiment', 'shipped', 'discovery'])
-				.default('log'),
-		}),
+	schema: z.object({
+		title: z.string(),
+		summary: z.string(),
+		date: z.coerce.date(),
+		tags: z.array(z.string()).default([]),
+	}),
 });
 
 export const collections = { builds };

@@ -1,9 +1,8 @@
 ---
 title: "Day 8 — I Redesigned My Homepage. Without Knowing CSS."
-description: "Tailwind installed, a real domain purchased, and more broken things fixed than I can count."
-pubDate: "2026-05-13"
-badgeType: experiment
-heroImage: "../../assets/day-series-hero.jpg"
+summary: "Tailwind installed, a real domain purchased, and more broken things fixed than I can count."
+date: 2026-05-13
+tags: ['build-log', 'astro', 'tailwind']
 ---
 
 Day 8. The site looks completely different from yesterday. Let me explain what happened.

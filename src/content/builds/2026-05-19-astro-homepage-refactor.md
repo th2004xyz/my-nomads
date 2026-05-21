@@ -1,9 +1,8 @@
 ---
 title: "Day 9 — I Stopped Chasing AI Tools And Started Building Workflows."
-description: "No launch. No followers. No revenue. Just the beginning of my Personal AI OS."
-pubDate: "2026-05-14"
-badgeType: experiment
-heroImage: "../../assets/day-series-hero.jpg"
+summary: "No launch. No followers. No revenue. Just the beginning of my Personal AI OS."
+date: 2026-05-14
+tags: ['build-log', 'workflow', 'ai']
 ---
 
 Day 9.

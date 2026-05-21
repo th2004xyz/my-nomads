@@ -8,28 +8,20 @@ const nowBuilding = [
   'GitHub Discovery Engine',
 ];
 
-const badgeLabels: Record<string, string> = {
-  log: '📓 Build Log',
-  experiment: '🧪 Build Log',
-  shipped: '🚀 Shipped',
-  discovery: '🐙 Discovery',
-};
-
 const allBuilds = await getCollection('builds');
 const builds = [...allBuilds]
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .map((entry, index) => ({
     id: entry.id,
-    href: `/builds/${entry.id}/`,
-    badgeType: entry.data.badgeType,
-    badgeLabel: badgeLabels[entry.data.badgeType] ?? badgeLabels.log,
-    timeAgo: entry.data.pubDate.toLocaleDateString('en-US', {
+    href: `/builds/${entry.id}`,
+    badgeLabel: entry.data.tags[0] ?? 'build-log',
+    timeAgo: entry.data.date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
     }),
     title: entry.data.title,
-    description: entry.data.description,
+    summary: entry.data.summary,
     index: String(allBuilds.length - index).padStart(3, '0'),
   }));
 ---
@@ -53,14 +45,14 @@ const builds = [...allBuilds]
     {builds.map((build) => (
       <a href={build.href} class="card build-card build-card-link">
         <div class="build-header">
-          <span class={`build-badge badge-${build.badgeType}`}>
+          <span class="build-badge badge-log">
             {build.badgeLabel} #{build.index}
           </span>
           <span class="build-time">{build.timeAgo}</span>
         </div>
 
         <h3>{build.title}</h3>
-        <p>{build.description}</p>
+        <p>{build.summary}</p>
 
         <span class="build-read">Read build log →</span>
       </a>
@@ -73,11 +65,6 @@ const builds = [...allBuilds]
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: transform var(--transition), border-color var(--transition);
-  }
-  .build-card-link:hover {
-    transform: translateY(-4px);
-    border-color: rgba(77, 124, 254, 0.35);
   }
   .build-read {
     display: inline-block;
