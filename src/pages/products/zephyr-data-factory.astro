@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/homepage/Navbar.astro";
+import Footer from "../../components/shared/Footer.astro";
+---
+
+<BaseLayout
+  title="Zephyr Data Factory — Dataset API"
+  description="API subscription service for curated datasets. On-demand access to crypto OHLCV, on-chain metrics, and more."
+>
+  <Navbar />
+  <main>
+    <section class="product-hero">
+      <div class="product-badge coming-soon">Coming Soon</div>
+      <h1>Zephyr Data Factory</h1>
+      <p class="product-tagline">Dataset API Subscription — Programmatic Access to Curated Data</p>
+      <a href="#notify" class="btn-primary">Notify Me</a>
+    </section>
+
+    <section class="product-section">
+      <h2>Overview</h2>
+      <p>
+        Zephyr Data Factory is the API layer for Zephyr's curated datasets. Instead of downloading
+        static files, subscribe to programmatic access — always up-to-date, always consistent.
+      </p>
+      <p>
+        Built on Cloudflare Workers for global low-latency delivery, with built-in authentication,
+        rate limiting, and usage-based billing via Polar.sh.
+      </p>
+    </section>
+
+    <section class="product-section">
+      <h2>Planned Features</h2>
+      <ul class="feature-list">
+        <li><strong>REST API</strong> — Query OHLCV data by chain, symbol, timeframe, and date range</li>
+        <li><strong>Incremental Updates</strong> — Daily delta endpoints so you never re-download</li>
+        <li><strong>Multiple Formats</strong> — JSON, Parquet, CSV output options</li>
+        <li><strong>Usage Billing</strong> — Pay only for what you query, with monthly caps</li>
+        <li><strong>API Keys</strong> — Secure authentication with scoped access tokens</li>
+      </ul>
+    </section>
+
+    <section class="product-section pricing">
+      <h2>Pricing</h2>
+      <div class="price-card">
+        <span class="price">$49<span class="price-unit">/mo</span></span>
+        <span class="price-note">Estimated. Launch pricing TBD.</span>
+      </div>
+      <a href="#notify" class="btn-primary">Get Notified at Launch →</a>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .product-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .product-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .coming-soon {
+    background: #f59e0b;
+    color: #fff;
+  }
+  .product-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+  .product-tagline {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .product-section {
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+  }
+  .product-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .product-section p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  .feature-list li {
+    padding: 0.5rem 0;
+    color: #444;
+  }
+  .pricing {
+    text-align: center;
+  }
+  .price-card {
+    margin-bottom: 1.5rem;
+  }
+  .price {
+    font-size: 3rem;
+    font-weight: 800;
+    display: block;
+  }
+  .price-unit {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #888;
+  }
+  .price-note {
+    color: #666;
+    font-size: 0.95rem;
+  }
+</style>

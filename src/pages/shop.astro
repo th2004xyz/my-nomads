@@ -1,67 +1,80 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/shared/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/homepage/Navbar.astro';
 import Footer from '../components/shared/Footer.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="Shop | Zephyr" description="Digital products — templates, toolkits, and workflows for solo builders and digital nomads." />
-	</head>
-	<body>
-		<Header />
-		<main>
+<BaseLayout
+  title="Shop | Zephyr"
+  description="Curated data products — crypto datasets, APIs, and AI tools for builders and researchers."
+>
+  <Navbar />
+  <main>
 			<section class="shop-hero">
-				<h1>Digital Products by Evan</h1>
-				<p>I built these for myself first. Now I'm making them available to you.</p>
+				<h1>Data Products</h1>
+				<p>Curated datasets and tools for AI builders and crypto researchers.</p>
 			</section>
 
 			<section class="products">
 				<article class="product-card">
-					<div class="product-tag">Bestseller</div>
-					<h2>The Tao of Flow</h2>
-					<p class="product-origin">I was burning out at Honeywell trying to do more, faster. This Notion system helped me slow down and actually get the right things done.</p>
+					<div class="product-tag available">Available</div>
+					<h2>Crypto OHLCV Dataset</h2>
+					<p class="product-origin">Niche chain OHLCV data — 4 chains, 4 exchanges, 3 timeframes. Multi-exchange aligned with full provenance.</p>
 					<ul>
-						<li>4-week seasonal productivity cycle system</li>
-						<li>Daily energy tracking aligned with Daoist principles</li>
-						<li>Weekly reflection & strategy database</li>
-						<li>Built-in habit tracker & focus rituals</li>
+						<li>SUI, APT, ARB, OP — 1h, 4h, 1d candles</li>
+						<li>Binance, OKX, Bybit, Coinbase — median aligned</li>
+						<li>414,427 rows · 2023-01 to 2024-07 · Parquet</li>
+						<li>Provenance report + NO-PII compliance included</li>
 					</ul>
 					<div class="product-footer">
-						<span class="price">$19</span>
+						<span class="price">$29</span>
 						<a href="https://gumroad.com" target="_blank" class="btn-buy">Get Now →</a>
 					</div>
 				</article>
 
 				<article class="product-card">
-					<div class="product-tag">New</div>
-					<h2>The 7 Habits — 12-Week Template</h2>
-					<p class="product-origin">You've read the book. I built this because I needed a real system to actually live it, not just think about it.</p>
+					<div class="product-tag coming">Coming Soon</div>
+					<h2>Data API Subscription</h2>
+					<p class="product-origin">Programmatic access to curated datasets. Always up-to-date, pay for what you use.</p>
 					<ul>
-						<li>12-week structured habit development plan</li>
-						<li>One habit per focus period with daily prompts</li>
-						<li>Progress tracking & weekly review system</li>
-						<li>Reflection journal built right in</li>
+						<li>REST API — query by chain, symbol, timeframe</li>
+						<li>Incremental daily updates</li>
+						<li>JSON, Parquet, CSV output</li>
+						<li>Usage-based billing with monthly caps</li>
 					</ul>
 					<div class="product-footer">
-						<span class="price">$19</span>
-						<a href="https://gumroad.com" target="_blank" class="btn-buy">Get Now →</a>
+						<span class="price">$49<span class="price-unit">/mo</span></span>
+						<a href="/products/zephyr-data-factory" class="btn-buy">Learn More →</a>
+					</div>
+				</article>
+
+				<article class="product-card">
+					<div class="product-tag coming">Coming Soon</div>
+					<h2>Zeph-Trans</h2>
+					<p class="product-origin">Crypto industry translation tool — understands blockchain context, not just words.</p>
+					<ul>
+						<li>Domain-aware crypto terminology translation</li>
+						<li>Multi-model: Claude, DeepSeek, GPT-4, Gemini</li>
+						<li>Custom glossary management</li>
+						<li>Markdown & code formatting preserved</li>
+					</ul>
+					<div class="product-footer">
+						<span class="price">$9<span class="price-unit">/mo</span></span>
+						<a href="/products/zeph-trans" class="btn-buy">Learn More →</a>
 					</div>
 				</article>
 			</section>
 
 			<section class="shop-note">
-				<p>Questions about a product? Email me at <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a></p>
+				<p>Questions? Email <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a></p>
 			</section>
 		</main>
-		<Footer />
-	</body>
-</html>
+  <Footer />
+</BaseLayout>
 
 <style>
 	main {
-		max-width: 860px;
+		max-width: 960px;
 		margin: 0 auto;
 		padding: 2rem 1rem;
 	}
@@ -80,7 +93,7 @@ import Footer from '../components/shared/Footer.astro';
 	}
 	.products {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 		padding: 2rem 0;
 	}
@@ -92,24 +105,30 @@ import Footer from '../components/shared/Footer.astro';
 	}
 	.product-tag {
 		display: inline-block;
-		background: #000;
-		color: #fff;
 		padding: 0.2rem 0.6rem;
 		border-radius: 4px;
 		font-size: 0.8rem;
 		font-weight: 600;
 		margin-bottom: 0.75rem;
 	}
+	.available {
+		background: #22c55e;
+		color: #fff;
+	}
+	.coming {
+		background: #f59e0b;
+		color: #fff;
+	}
 	.product-card h2 {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		margin-bottom: 0.5rem;
 	}
 	.product-origin {
 		color: #666;
 		font-style: italic;
 		margin-bottom: 1rem;
-		font-size: 0.95rem;
-		line-height: 1.6;
+		font-size: 0.9rem;
+		line-height: 1.5;
 	}
 	.product-card ul {
 		padding-left: 1.2rem;
@@ -117,8 +136,8 @@ import Footer from '../components/shared/Footer.astro';
 		color: #444;
 	}
 	.product-card ul li {
-		margin-bottom: 0.4rem;
-		font-size: 0.95rem;
+		margin-bottom: 0.3rem;
+		font-size: 0.9rem;
 	}
 	.product-footer {
 		display: flex;
@@ -131,13 +150,19 @@ import Footer from '../components/shared/Footer.astro';
 		font-size: 1.5rem;
 		font-weight: 800;
 	}
+	.price-unit {
+		font-size: 0.85rem;
+		font-weight: 400;
+		color: #888;
+	}
 	.btn-buy {
 		background: #000;
 		color: #fff;
-		padding: 0.6rem 1.2rem;
+		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		text-decoration: none;
 		font-weight: 600;
+		font-size: 0.9rem;
 	}
 	.shop-note {
 		text-align: center;

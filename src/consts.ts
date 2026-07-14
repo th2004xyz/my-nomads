@@ -3,5 +3,5 @@
 
 export const SITE_TITLE = 'Zephyr';
 export const SITE_DESCRIPTION =
-	'Workflows, runtime systems, AI tools, and digital leverage for solo builders and digital nomads.';
+	'Curated data products for AI builders — crypto datasets, data APIs, and domain-specific AI tools.';
 export const SITE_URL = 'https://zephyrdn.com';

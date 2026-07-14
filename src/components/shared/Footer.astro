@@ -1,22 +1,74 @@
 ---
-// src/components/Footer.astro
-// Site footer with social links and runtime version info.
-
-const links = [
-  { label: "✕ Follow on X", href: "https://twitter.com/zephyr_8379" },
-  { label: "⋈ GitHub",      href: "https://github.com/th2004xyz" },
-  { label: "☰ RSS",         href: "/rss.xml" },
-];
-
-const year = new Date().getFullYear();
+// Footer with sub-site links.
 ---
 
 <footer class="footer">
-  <div class="footer-links">
-    {links.map((link) => (
-      <a href={link.href}>{link.label}</a>
-    ))}
+  <div class="footer-container">
+    <div class="footer-brand">
+      <p>&copy; 2026 Zephyr — Data Products for AI Builders</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="/products/zephyr-forge">Forge</a>
+        <a href="/products/zephyr-data-factory">Data Factory</a>
+        <a href="/products/zeph-trans">Zeph-Trans</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Network</h4>
+        <a href="https://gta6.zephyrdn.com" target="_blank">GTA6 Project</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>
+      </div>
+    </div>
   </div>
-  <p>Zephyr • AI-Native Digital Life Hub</p>
-  <p>Built in public • v1.0 • © {year}</p>
 </footer>
+
+<style>
+  .footer {
+    background: #111;
+    color: #ccc;
+    padding: 3rem 1rem 2rem;
+    margin-top: 4rem;
+  }
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-brand {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-brand p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .footer-col h4 {
+    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-col a {
+    display: block;
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.2rem 0;
+  }
+  .footer-col a:hover {
+    color: #fff;
+  }
+</style>

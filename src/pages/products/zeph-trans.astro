@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/homepage/Navbar.astro";
+import Footer from "../../components/shared/Footer.astro";
+---
+
+<BaseLayout
+  title="Zeph-Trans — Crypto Industry Translation"
+  description="Professional translation tool for the crypto and finance industry. Powered by curated domain datasets for accurate, context-aware translations."
+>
+  <Navbar />
+  <main>
+    <section class="product-hero">
+      <div class="product-badge coming-soon">Coming Soon</div>
+      <h1>Zeph-Trans</h1>
+      <p class="product-tagline">Crypto Industry Translation — Powered by Domain Datasets</p>
+      <a href="#notify" class="btn-primary">Notify Me</a>
+    </section>
+
+    <section class="product-section">
+      <h2>Overview</h2>
+      <p>
+        General-purpose translation tools stumble on crypto terminology. "Gas", "staking", "slippage" —
+        these mean very specific things in web3, and generic AI gets them wrong.
+      </p>
+      <p>
+        Zeph-Trans is a specialized translation tool built on Zephyr's curated crypto industry datasets.
+        It understands blockchain context, DeFi jargon, and trading terminology — producing translations
+        that actually make sense for the crypto industry.
+      </p>
+    </section>
+
+    <section class="product-section">
+      <h2>Planned Features</h2>
+      <ul class="feature-list">
+        <li><strong>Domain-Aware Translation</strong> — Crypto terminology mapped to accurate translations across 10+ languages</li>
+        <li><strong>Context Preservation</strong> — Understands whether "gas" means fuel or transaction fee based on sentence context</li>
+        <li><strong>Multi-Model Support</strong> — Claude, DeepSeek, GPT-4, and Gemini backends</li>
+        <li><strong>Glossary Management</strong> — Custom terminology dictionaries for your project or DAO</li>
+        <li><strong>Markdown & Code</strong> — Preserves formatting, code blocks, and technical notation</li>
+      </ul>
+    </section>
+
+    <section class="product-section pricing">
+      <h2>Pricing</h2>
+      <div class="price-card">
+        <span class="price">$9<span class="price-unit">/mo</span></span>
+        <span class="price-note">Estimated. Launch pricing TBD.</span>
+      </div>
+      <a href="#notify" class="btn-primary">Get Notified at Launch →</a>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .product-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .product-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .coming-soon {
+    background: #f59e0b;
+    color: #fff;
+  }
+  .product-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+  .product-tagline {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .product-section {
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+  }
+  .product-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .product-section p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  .feature-list li {
+    padding: 0.5rem 0;
+    color: #444;
+  }
+  .pricing {
+    text-align: center;
+  }
+  .price-card {
+    margin-bottom: 1.5rem;
+  }
+  .price {
+    font-size: 3rem;
+    font-weight: 800;
+    display: block;
+  }
+  .price-unit {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #888;
+  }
+  .price-note {
+    color: #666;
+    font-size: 0.95rem;
+  }
+</style>

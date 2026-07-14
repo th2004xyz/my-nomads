@@ -1,35 +1,29 @@
 ---
-// src/components/CTACommunity.astro
-// Section 05 — Join the Build / community CTA with builder note and value list.
-
-const ctaItems = [
-  "Weekly AI workflow discoveries",
-  "Early access to workflow kits",
-  "Behind-the-scenes build logs",
-  "Honest notes on what works (and what doesn't)",
-];
+// CTA — Newsletter subscription for data product updates.
 ---
 
 <section class="cta-section" id="community">
-  <div class="builder-note">
-    <span class="note-badge">📝 Builder Note</span>
-    <p>
-      "I don't build AI tools. I build systems that let me run my life with less
-      friction. Zephyr is the public trace of that process."
-    </p>
-  </div>
-
-  <h2>Follow the Build</h2>
-  <p>Updates from someone actually doing this — not a finished product, a live process.</p>
+  <h2>Stay Updated</h2>
+  <p>New datasets, product launches, and industry insights — delivered to your inbox.</p>
 
   <div class="cta-list">
-    {ctaItems.map((item) => (
-      <div class="cta-item">
-        <span class="cta-check">→</span>
-        <span>{item}</span>
-      </div>
-    ))}
+    <div class="cta-item">
+      <span class="cta-check">→</span>
+      <span>Early access to new datasets</span>
+    </div>
+    <div class="cta-item">
+      <span class="cta-check">→</span>
+      <span>Product launch notifications</span>
+    </div>
+    <div class="cta-item">
+      <span class="cta-check">→</span>
+      <span>Crypto data industry insights</span>
+    </div>
+    <div class="cta-item">
+      <span class="cta-check">→</span>
+      <span>No spam, unsubscribe anytime</span>
+    </div>
   </div>
 
-  <a href="#" class="cta-button">Stay Updated →</a>
+  <a href="#" class="cta-button">Subscribe for Updates →</a>
 </section>
