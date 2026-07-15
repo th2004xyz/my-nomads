@@ -1,193 +1,119 @@
----
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navbar from '../components/homepage/Navbar.astro';
-import Footer from '../components/shared/Footer.astro';
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/homepage/Navbar.astro";
+import Footer from "../components/shared/Footer.astro";
 ---
 
 <BaseLayout
-	title="About | Zephyr"
-	description="Curated data products for AI builders — crypto datasets, APIs, and domain-specific tools. Not templates. Real data infrastructure."
+  title="About | Zephyr"
+  description="Curated data products for AI builders — real-world data that AI can't generate. Not templates. Sourced, verified, documented."
 >
-	<Navbar />
-	<main class="about-page">
-		<h1>About Zephyr</h1>
-
-		<p class="about-lead">Zephyr (zephyrdn.com) is a curated data product company. We build high-quality datasets, APIs, and AI tools for crypto researchers, quantitative analysts, and AI builders.</p>
-
-		<h2>Why Data Products?</h2>
-
-		<p>The AI era runs on data. But here's the problem: most publicly available datasets are noisy, inconsistent, and undocumented. Every researcher and builder wastes hours cleaning, aligning, and validating — before they can do any actual work.</p>
-
-		<p>We believe <strong>data preparation is infrastructure</strong>. It shouldn't be the first thing every team rebuilds from scratch. It should be a product you can buy, trust, and plug into your pipeline immediately.</p>
-
-		<p>That's what Zephyr builds. Curated, validated, documented datasets — ready for AI training, backtesting, and quantitative research.</p>
-
-		<h2>Our Approach</h2>
-
-		<div class="approach-grid">
-			<div class="approach-item">
-				<h3>Multi-Exchange Alignment</h3>
-				<p>Every data point is benchmarked against a median price across multiple exchanges. Outliers flagged at 3% deviation. You get a single source of truth, not four conflicting numbers.</p>
-			</div>
-			<div class="approach-item">
-				<h3>Full Provenance</h3>
-				<p>Every dataset ships with a source manifest, audit trail, and compliance report. You know exactly where every number came from and how it was processed.</p>
-			</div>
-			<div class="approach-item">
-				<h3>AI-Ready Format</h3>
-				<p>Hive-partitioned Parquet files. DuckDB, Pandas, PyTorch — drop in and go. No CSV parsing, no schema guessing, no encoding issues.</p>
-			</div>
-			<div class="approach-item">
-				<h3>Compliance First</h3>
-				<p>NO-PII declarations, data lineage tracking, and institutional-grade documentation. Built for teams that need to pass compliance reviews.</p>
-			</div>
-		</div>
-
-		<h2>Our Products</h2>
-
-		<div class="product-list">
-			<div class="product-item">
-				<div class="product-item-header">
-					<h3><a href="/products/zephyr-forge">Zephyr Forge</a></h3>
-					<span class="product-tag available">Available</span>
-				</div>
-				<p>Curated crypto OHLCV dataset — 4 niche chains, 4 exchanges, 3 timeframes. Multi-exchange aligned with outlier detection. 414K+ rows in Parquet. <a href="/products/zephyr-forge">$29 on Gumroad →</a></p>
-			</div>
-			<div class="product-item">
-				<div class="product-item-header">
-					<h3><a href="/products/zephyr-data-factory">Zephyr Data Factory</a></h3>
-					<span class="product-tag coming">Coming Soon</span>
-				</div>
-				<p>Dataset API subscription — programmatic access to curated data with incremental updates, usage-based billing, and multi-format output. <a href="/products/zephyr-data-factory">Learn more →</a></p>
-			</div>
-			<div class="product-item">
-				<div class="product-item-header">
-					<h3><a href="/products/zeph-trans">Zeph-Trans</a></h3>
-					<span class="product-tag coming">Coming Soon</span>
-				</div>
-				<p>Crypto industry translation tool — domain-aware, context-preserving, powered by curated datasets. Supports multiple AI backends and custom glossaries. <a href="/products/zeph-trans">Learn more →</a></p>
-			</div>
-		</div>
-
-		<h2>Not Templates. Not Hype. Data.</h2>
-
-		<p>The internet is full of digital nomad templates, AI prompt packs, and "build in public" content. We're not that.</p>
-
-		<p>We build the kind of data products that quants, researchers, and AI engineers actually need — real datasets, with real provenance, at reasonable prices. No fluff. No "10x your life" promises. Just clean, reliable data you can build on.</p>
-
-		<h2>Contact</h2>
-		<ul>
-			<li>X: <a href="https://twitter.com/zephyr_8379" target="_blank" rel="noopener noreferrer">@zephyr_8379</a></li>
-			<li>Email: Yakovxia@gmail.com</li>
-		</ul>
-	</main>
-	<Footer />
+  <Navbar />
+  <main class="about-page">
+    <h1>About Zephyr</h1>
+    <p class="about-lead">AI can generate content for free. But the data that AI can't generate — data that requires real-world access, engineering investment, and verifiable sources — is becoming the real scarcity. Zephyr builds only the latter.</p>
+    <h2>The Data That Matters</h2>
+    <p>Not all data is created equal. The internet is flooding with AI-generated content, and the line between synthetic and real is blurring fast. Training data contamination is a documented problem. Licensing chains are fragmented. Provenance is often an afterthought.</p>
+    <p>We take a different approach. Everything we sell comes from one of two categories — and we tell you which is which:</p>
+    <div class="data-categories">
+      <div class="data-category">
+        <div class="category-header">
+          <span class="category-icon">&#9632;</span>
+          <h3>Verified Real-World Data</h3>
+        </div>
+        <p>Crypto exchange OHLCV, EIA energy statistics, public financial filings — data sourced from real-world systems that AI models cannot reproduce on their own. Multi-exchange aligned, outlier-filtered, with full provenance. Priced accordingly.</p>
+      </div>
+      <div class="data-category">
+        <div class="category-header">
+          <span class="category-icon">&#9711;</span>
+          <h3>Ready-to-Train Starter Packs</h3>
+        </div>
+        <p>Synthetic datasets for local service businesses, niche industries, and specific use cases. You could build these yourself with a few hours of prompt engineering. We save you that time — and include a QA checklist. Priced as efficiency tools, not as exclusive insights.</p>
+      </div>
+    </div>
+    <p class="about-note">This honesty isn't a weakness. It's how we build trust. When every data seller claims everything is "exclusive," the one who tells you which products are commodity and which are scarce is the one you'll come back to.</p>
+    <h2>Our Standards</h2>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <h3>License</h3>
+        <p>Every dataset comes with explicit commercial use rights. No ambiguous terms, no "check with your lawyer" clauses. If you buy it, you can use it in production.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Update Frequency</h3>
+        <p>Static datasets ship with a published update schedule. API subscriptions include daily incremental updates. You know exactly how fresh the data is before you buy.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Provenance</h3>
+        <p>Source manifest, processing pipeline, outlier detection log — we document where every data point came from and what happened to it. Built for teams that need to pass compliance reviews.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Format</h3>
+        <p>Hive-partitioned Parquet by default. Drop into DuckDB, Pandas, or PyTorch without parsing CSVs or fixing encoding issues. AI-ready from day one.</p>
+      </div>
+    </div>
+    <h2>Our Products</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <div class="product-item-header">
+          <h3><a href="/products/zephyr-forge">Zephyr Forge</a></h3>
+          <span class="product-tag available">Available</span>
+        </div>
+        <p>Curated crypto OHLCV dataset — 4 niche chains, 4 exchanges, 3 timeframes. Multi-exchange aligned with outlier detection. 414K+ rows in Parquet. <a href="/products/zephyr-forge"> on Gumroad →</a></p>
+      </div>
+      <div class="product-item">
+        <div class="product-item-header">
+          <h3><a href="/products/zephyr-data-factory">Zephyr Data Factory</a></h3>
+          <span class="product-tag coming">Coming Soon</span>
+        </div>
+        <p>MCP gateway for AI agents — programmatic access to curated data via Claude, Cursor, and AutoGPT ecosystems. Usage-based billing, audit logging, verified sources. <a href="/products/zephyr-data-factory">Learn more →</a></p>
+      </div>
+      <div class="product-item">
+        <div class="product-item-header">
+          <h3><a href="/tools">Zeph-Trans</a></h3>
+          <span class="product-tag free">Free</span>
+        </div>
+        <p>Long-text translation tool — free for general use, powered by domain-specific datasets for professional accuracy. Our data, proving itself in production. <a href="/tools">Try it →</a></p>
+      </div>
+    </div>
+    <h2>Not Hype. Data.</h2>
+    <p>The internet is full of digital nomad templates, AI prompt packs, and "build in public" content. We're not that. We build data products that quants, researchers, and AI engineers actually need — real datasets, real provenance, real value.</p>
+    <p>No fluff. No "10x your life" promises. Just data you can trust and build on.</p>
+    <h2>Contact</h2>
+    <ul>
+      <li>X: <a href="https://twitter.com/zephyr_8379" target="_blank" rel="noopener noreferrer">@zephyr_8379</a></li>
+      <li>Email: Yakovxia@gmail.com</li>
+    </ul>
+  </main>
+  <Footer />
 </BaseLayout>
-
 <style>
-	.about-page {
-		max-width: 720px;
-		margin: 0 auto;
-		padding: 5rem 1.5rem 4rem;
-		color: var(--color-text-muted);
-		line-height: 1.7;
-	}
-	.about-lead {
-		font-size: 1.1rem;
-		color: var(--color-white);
-		margin-bottom: 1.5rem;
-	}
-	.about-page h1,
-	.about-page h2 {
-		color: var(--color-white);
-		margin: 1.5rem 0 0.75rem;
-	}
-	.about-page h1 {
-		margin-top: 0;
-	}
-	.about-page a {
-		color: var(--color-blue);
-	}
-	.about-page ul {
-		padding-left: 1.25rem;
-		margin-bottom: 1rem;
-	}
-	.approach-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		margin-bottom: 1.5rem;
-	}
-	.approach-item {
-		padding: 1.25rem;
-		border: 1px solid var(--color-border-soft);
-		border-radius: var(--radius-md);
-		background: var(--color-card);
-	}
-	.approach-item h3 {
-		font-size: 1rem;
-		color: var(--color-white);
-		margin: 0 0 0.5rem;
-	}
-	.approach-item p {
-		font-size: 0.88rem;
-		line-height: 1.55;
-		margin: 0;
-	}
-	.product-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1.25rem;
-		margin-bottom: 1.5rem;
-	}
-	.product-item {
-		padding: 1.25rem 1.5rem;
-		border: 1px solid var(--color-border-soft);
-		border-radius: var(--radius-md);
-		background: var(--color-card);
-	}
-	.product-item-header {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		margin-bottom: 0.5rem;
-	}
-	.product-item-header h3 {
-		margin: 0;
-		font-size: 1.1rem;
-	}
-	.product-item-header h3 a {
-		color: var(--color-white);
-		text-decoration: none;
-	}
-	.product-item-header h3 a:hover {
-		color: var(--color-blue);
-	}
-	.product-tag {
-		display: inline-block;
-		padding: 0.15rem 0.5rem;
-		border-radius: 4px;
-		font-size: 0.7rem;
-		font-weight: 600;
-		white-space: nowrap;
-	}
-	.product-tag.available {
-		background: #22c55e;
-		color: #fff;
-	}
-	.product-tag.coming {
-		background: #f59e0b;
-		color: #fff;
-	}
-	.product-item p {
-		color: var(--color-text-muted);
-		font-size: 0.92rem;
-		line-height: 1.6;
-		margin: 0;
-	}
-	@media (max-width: 600px) {
-		.approach-grid {
-			grid-template-columns: 1fr;
-		}
-	}
+  .about-page { max-width: 720px; margin: 0 auto; padding: 5rem 1.5rem 4rem; color: var(--color-text-muted); line-height: 1.7; }
+  .about-lead { font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; }
+  .about-page h1, .about-page h2 { color: var(--color-white); margin: 1.5rem 0 0.75rem; }
+  .about-page h1 { margin-top: 0; }
+  .about-page a { color: var(--color-blue); }
+  .about-page ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .about-note { font-style: italic; font-size: 0.95rem; color: var(--color-text-faint); padding: 1rem 1.25rem; border-left: 3px solid var(--color-border-soft); margin: 1.5rem 0; }
+  .data-categories { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+  .data-category { padding: 1.25rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
+  .category-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .category-icon { font-size: 1.2rem; color: var(--color-blue); }
+  .category-header h3 { font-size: 1rem; color: var(--color-white); margin: 0; }
+  .data-category p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+  .approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+  .approach-item { padding: 1.25rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
+  .approach-item h3 { font-size: 1rem; color: var(--color-white); margin: 0 0 0.5rem; }
+  .approach-item p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+  .product-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.5rem; }
+  .product-item { padding: 1.25rem 1.5rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
+  .product-item-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .product-item-header h3 { margin: 0; font-size: 1.1rem; }
+  .product-item-header h3 a { color: var(--color-white); text-decoration: none; }
+  .product-item-header h3 a:hover { color: var(--color-blue); }
+  .product-tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+  .product-tag.available { background: #22c55e; color: #fff; }
+  .product-tag.coming { background: #f59e0b; color: #fff; }
+  .product-tag.free { background: var(--color-blue); color: #fff; }
+  .product-item p { color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+  @media (max-width: 600px) { .approach-grid { grid-template-columns: 1fr; } }
 </style>
