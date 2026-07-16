@@ -56,7 +56,7 @@ import Footer from "../../components/shared/Footer.astro";
   main {
     max-width: 860px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem 2rem;
   }
   .product-hero {
     text-align: center;
@@ -81,22 +81,12 @@ import Footer from "../../components/shared/Footer.astro";
   }
   .product-tagline {
     font-size: 1.15rem;
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
-  }
-  .btn-primary {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
   }
   .product-section {
     padding: 2rem 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border-soft);
   }
   .product-section h2 {
     font-size: 1.5rem;
@@ -104,7 +94,7 @@ import Footer from "../../components/shared/Footer.astro";
     margin-bottom: 1rem;
   }
   .product-section p {
-    color: #444;
+    color: var(--color-text-muted);
     line-height: 1.7;
     margin-bottom: 0.75rem;
   }
@@ -114,7 +104,7 @@ import Footer from "../../components/shared/Footer.astro";
   }
   .feature-list li {
     padding: 0.5rem 0;
-    color: #444;
+    color: var(--color-text-muted);
   }
   .pricing {
     text-align: center;
@@ -130,10 +120,10 @@ import Footer from "../../components/shared/Footer.astro";
   .price-unit {
     font-size: 1.25rem;
     font-weight: 400;
-    color: #888;
+    color: var(--color-text-faint);
   }
   .price-note {
-    color: #666;
+    color: var(--color-text-muted);
     font-size: 0.95rem;
   }
 </style>
