@@ -30,13 +30,22 @@ import Footer from "../../components/shared/Footer.astro";
     </section>
 
     <section class="product-section">
-      <h2>Planned Features</h2>
+      <h2>MCP Tools (MVP Ready)</h2>
       <ul class="feature-list">
-        <li><strong>REST API</strong> — Query OHLCV data by chain, symbol, timeframe, and date range</li>
-        <li><strong>Incremental Updates</strong> — Daily delta endpoints so you never re-download</li>
-        <li><strong>Multiple Formats</strong> — JSON, Parquet, CSV output options</li>
-        <li><strong>Usage Billing</strong> — Pay only for what you query, with monthly caps</li>
-        <li><strong>API Keys</strong> — Secure authentication with scoped access tokens</li>
+        <li><strong>list_chains</strong> — List all available chains with row counts and date ranges</li>
+        <li><strong>query_ohlcv</strong> — Query OHLCV data by chain, symbol, timeframe, and date range</li>
+        <li><strong>get_stats</strong> — Aggregated statistics (min/max/avg price, volume, outlier count)</li>
+        <li><strong>DuckDB Engine</strong> — Direct Parquet querying, zero ETL, sub-second response</li>
+      </ul>
+    </section>
+
+    <section class="product-section">
+      <h2>Roadmap</h2>
+      <ul class="feature-list">
+        <li><strong>Cloudflare Worker</strong> — Global edge deployment for low-latency access</li>
+        <li><strong>MCP Protocol</strong> — Native Claude/Cursor integration via MCP stdio</li>
+        <li><strong>Polar.sh Billing</strong> — Usage-based pricing with API key management</li>
+        <li><strong>Daily Updates</strong> — Automated incremental data refresh via GitHub Actions</li>
       </ul>
     </section>
 
