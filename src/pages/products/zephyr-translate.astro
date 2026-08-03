@@ -1,0 +1,402 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/homepage/Navbar.astro";
+import Footer from "../../components/shared/Footer.astro";
+import { PADDLE_CHECKOUT_URLS } from "../../consts";
+---
+
+<BaseLayout
+  title="Zephyr Translate — Windows Desktop AI Translation Tool"
+  description="Long-document AI translation for Windows desktop. Freemium with subscription or lifetime license, BYOK — your documents and API keys never leave your machine."
+>
+  <Navbar />
+  <main>
+    <section class="product-hero">
+      <div class="product-badge available">Available</div>
+      <h1>Zephyr Translate</h1>
+      <p class="product-tagline">Windows Desktop AI Translation — Long Documents, Consistent Terminology, Full Privacy</p>
+      <div class="hero-actions">
+        <a href="/tools" class="btn-primary">Try the Free Version →</a>
+        <a href="#pricing" class="btn-secondary">See Pricing</a>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Overview</h2>
+      <p>
+        Zephyr Translate is a Windows desktop app for professionals who translate long documents —
+        books, contracts, research papers, technical manuals — and need more than a paste-a-paragraph
+        web tool.
+      </p>
+      <p>
+        It runs locally on your machine (built with Tauri). Your documents, translations, and
+        terminology glossaries are stored only on your device, and the app calls AI models directly
+        with your own API key (BYOK). No cloud relay, no account required, absolute privacy.
+      </p>
+    </section>
+
+    <section class="product-section">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li><strong>Long-Document Translation</strong> — translate entire books or contracts in one workflow, segment by segment</li>
+        <li><strong>Terminology Consistency</strong> — custom glossaries enforced across the whole document, no drift</li>
+        <li><strong>Progress & Resume</strong> — per-segment persistence; resumes from the last finished segment after interruption</li>
+        <li><strong>Bilingual Review</strong> — side-by-side original/translation aligned view</li>
+        <li><strong>Batch Queue</strong> — multiple documents queued, multiple target languages</li>
+        <li><strong>Multi-Format Export</strong> — Markdown, DOCX, bilingual comparison, and glossary note exports</li>
+        <li><strong>Polish Side Panel</strong> — select any translated segment to rewrite or ask follow-up questions</li>
+      </ul>
+    </section>
+
+    <section class="product-section" id="pricing">
+      <h2>Pricing</h2>
+      <p class="pricing-intro">
+        Freemium by design — the free tier is fully usable without registration. Upgrade only when you need the pro workflow.
+      </p>
+      <div class="price-grid">
+        <div class="price-card free-card">
+          <h3>Free</h3>
+          <span class="price">$0</span>
+          <span class="price-note">No registration required</span>
+          <ul class="price-features">
+            <li>Single-document translation</li>
+            <li>Basic glossary (up to 50 terms)</li>
+            <li>Read-only bilingual view</li>
+            <li>Markdown export</li>
+            <li>BYOK — connect your own API key</li>
+          </ul>
+          <a href="/tools" class="btn-ghost">Start Free →</a>
+        </div>
+
+        <div class="price-card pro-card">
+          <h3>Pro Subscription</h3>
+          <div class="period-toggle" role="group" aria-label="Billing period">
+            <button type="button" data-period="monthly" class="active">Monthly</button>
+            <button type="button" data-period="yearly">Yearly</button>
+          </div>
+          <span class="price" data-period-price="monthly">$9<span class="price-unit">/mo</span></span>
+          <span class="price" data-period-price="yearly" hidden>$49<span class="price-unit">/yr</span></span>
+          <span class="price-note" data-period-price="monthly">Billed monthly. Cancel anytime.</span>
+          <span class="price-note" data-period-price="yearly">Save 54% — 2 months free</span>
+          <div class="btn-buy-wrap" data-period-btn="monthly">
+            {
+              PADDLE_CHECKOUT_URLS.monthly ? (
+                <a href={PADDLE_CHECKOUT_URLS.monthly} target="_blank" rel="noopener noreferrer" class="btn-buy">Subscribe Monthly →</a>
+              ) : (
+                <span class="btn-disabled">Monthly · Launching soon</span>
+              )
+            }
+          </div>
+          <div class="btn-buy-wrap" data-period-btn="yearly" hidden>
+            {
+              PADDLE_CHECKOUT_URLS.yearly ? (
+                <a href={PADDLE_CHECKOUT_URLS.yearly} target="_blank" rel="noopener noreferrer" class="btn-buy">Subscribe Yearly →</a>
+              ) : (
+                <span class="btn-disabled">Yearly · Launching soon</span>
+              )
+            }
+          </div>
+          <ul class="price-features">
+            <li>Everything in Free</li>
+            <li>Batch translation queue</li>
+            <li>Industry terminology packs</li>
+            <li>Unlimited glossary (import/export)</li>
+            <li>Pro exports — DOCX, bilingual, glossary notes</li>
+            <li>Polish side panel</li>
+          </ul>
+        </div>
+
+        <div class="price-card lifetime-card">
+          <h3>Lifetime License</h3>
+          <span class="price">$99</span>
+          <span class="price-note">Early-bird price, limited time</span>
+          <ul class="price-features">
+            <li>All Pro features, one-time payment</li>
+            <li>Locks in the Zephyr 1.x Pro feature set</li>
+            <li>License key activates offline</li>
+            <li>Early-bird upgrade path to future major versions</li>
+          </ul>
+          <div class="btn-buy-wrap">
+            {
+              PADDLE_CHECKOUT_URLS.lifetime ? (
+                <a href={PADDLE_CHECKOUT_URLS.lifetime} target="_blank" rel="noopener noreferrer" class="btn-buy">Get Lifetime License →</a>
+              ) : (
+                <span class="btn-disabled">Lifetime · Launching soon</span>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div class="byok-note">
+        <strong>🔑 BYOK — Bring Your Own Key:</strong> Works with OpenAI, DeepSeek, Qwen, or custom
+        providers. Your API key is stored locally and never leaves your machine. No middleman server
+        ever sees your documents.
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Who It's For</h2>
+      <p>
+        Teachers, researchers, and professionals in finance, law, and industry who work with long,
+        terminology-heavy documents — and who care about where their data goes. If consistency and
+        privacy matter more than a quick copy-paste, Zephyr Translate is built for you.
+      </p>
+      <p>
+        Questions? <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>
+      </p>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Toggle between Monthly ($9/mo) and Yearly ($49/yr) on the Pro card.
+  document.querySelectorAll('[data-period]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const period = btn.dataset.period;
+      const card = btn.closest('.pro-card');
+      if (!card) return;
+
+      card.querySelectorAll('[data-period]').forEach((b) => {
+        b.classList.toggle('active', b === btn);
+      });
+      card.querySelectorAll('[data-period-price]').forEach((el) => {
+        el.hidden = el.dataset.periodPrice !== period;
+      });
+      card.querySelectorAll('[data-period-btn]').forEach((el) => {
+        el.hidden = el.dataset.periodBtn !== period;
+      });
+    });
+  });
+</script>
+
+<style>
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 1rem 2rem;
+  }
+  .product-hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .product-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .available {
+    background: #22c55e;
+    color: #fff;
+  }
+  .product-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+  .product-tagline {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .product-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border-soft);
+  }
+  .product-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .product-section p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .product-section a {
+    color: var(--color-blue);
+  }
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  .feature-list li {
+    padding: 0.5rem 0;
+    color: var(--color-text-muted);
+  }
+  .pricing {
+    text-align: center;
+  }
+  .pricing-intro {
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .price-card {
+    border: 1px solid var(--color-border-soft);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: var(--color-card);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .price {
+    font-size: 2rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .price-unit {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-faint);
+  }
+  .price-note {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .pro-card {
+    border-color: var(--color-blue);
+  }
+  .price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    flex: 1;
+  }
+  .price-features li {
+    padding: 0.3rem 0;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+  }
+  .btn-ghost {
+    display: inline-block;
+    text-align: center;
+    background: transparent;
+    color: inherit;
+    padding: 0.55rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .btn-disabled {
+    display: inline-block;
+    text-align: center;
+    background: transparent;
+    color: var(--color-text-faint);
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .btn-buy-wrap {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .btn-buy-wrap .btn-buy,
+  .btn-buy-wrap .btn-disabled {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .period-toggle {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 999px;
+    padding: 3px;
+    margin-bottom: 1rem;
+  }
+  .period-toggle button {
+    border: 0;
+    background: transparent;
+    color: var(--color-text-faint);
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .period-toggle button.active {
+    background: var(--color-blue, #2563eb);
+    color: #fff;
+  }
+  .btn-buy {
+    display: inline-block;
+    text-align: center;
+    background: var(--color-blue, #2563eb);
+    color: #fff;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .btn-buy:hover {
+    filter: brightness(1.1);
+  }
+  .byok-note {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 8px;
+    background: var(--color-card);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+  @media (max-width: 700px) {
+    .price-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</｜｜DSML｜｜>

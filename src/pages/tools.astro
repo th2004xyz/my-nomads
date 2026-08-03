@@ -2,114 +2,242 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/homepage/Navbar.astro';
 import Footer from '../components/shared/Footer.astro';
+import { PADDLE_CHECKOUT_URLS } from '../consts';
 ---
 
 <BaseLayout
-  title="Tools | Zephyr"
-  description="Free long-text translation. Domain-specific accuracy powered by Zephyr curated datasets."
+  title="Zephyr Translate | Windows Desktop AI Translation Tool"
+  description="Zephyr Translate — Windows desktop app for long-document AI translation. Freemium, subscription or lifetime license, BYOK. Your documents and keys stay on your machine."
 >
   <Navbar />
   <main>
     <section class="tools-hero">
-      <h1>Zeph-Trans</h1>
-      <p class="hero-tagline">Long-text translation. Free for general use. Professional for your domain.</p>
-    </section>
-    <section class="tool-section">
-      <div class="tool-card highlight">
-        <div class="tool-header">
-          <div>
-            <div class="tool-badge free">Free</div>
-            <h2>General Translation</h2>
-          </div>
-        </div>
-        <p class="tool-desc">Translate documents up to 200K+ characters. Powered by Claude's million-token context window. No chunking, no context loss.</p>
-        <ul class="tool-features">
-          <li>200K+ character single-session</li>
-          <li>Preserves Markdown and formatting</li>
-          <li>Multiple output languages</li>
-        </ul>
-        <div class="tool-cta">
-          <span class="tool-status">Coming soon - free to use</span>
-          <a href="#notify" class="btn-primary">Notify Me</a>
-        </div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-header">
-          <div>
-            <div class="tool-badge pro">Professional</div>
-            <h2>Domain-Specific Translation</h2>
-          </div>
-        </div>
-        <p class="tool-desc">Same engine, powered by Zephyr curated datasets. Crypto, finance, technical - our data makes the difference.</p>
-        <div class="comparison">
-          <h3>Translation comparison</h3>
-          <div class="compare-cards">
-            <div class="compare-card generic">
-              <span class="compare-label">Generic AI</span>
-              <p class="compare-text">Gas fees have increased.</p>
-              <p class="compare-trans">Fuel cost increased.</p>
-              <p class="compare-note">Gas translated as fuel.</p>
-            </div>
-            <div class="compare-card">
-              <span class="compare-label">Zeph-Trans</span>
-              <p class="compare-text">Gas fees have increased.</p>
-              <p class="compare-trans">Gas fee increased.</p>
-              <p class="compare-note">Gas correctly preserved.</p>
-            </div>
-          </div>
-        </div>
-        <ul class="tool-features">
-          <li>Crypto, finance domain glossaries</li>
-          <li>Custom terminology dictionaries</li>
-          <li>Multi-model: Claude, DeepSeek, GPT-4</li>
-        </ul>
-        <div class="tool-cta">
-          <span class="tool-status">Coming soon - $9/mo</span>
-          <a href="#notify" class="btn-primary">Notify Me</a>
-        </div>
+      <h1>Zephyr Translate</h1>
+      <p class="hero-tagline">Windows desktop AI translation for long documents. Consistent terminology. Absolute privacy.</p>
+      <div class="hero-actions">
+        <a href="/products/zephyr-translate" class="btn-primary">Learn More →</a>
       </div>
     </section>
+
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="tool-card free-card">
+          <div class="tool-header">
+            <div>
+              <div class="tool-badge free">Free</div>
+              <h2>Free — $0</h2>
+            </div>
+          </div>
+          <p class="tool-desc">Start translating long documents immediately. The free tier is fully usable out of the box — no account, no email wall, no cloud relay.</p>
+          <ul class="tool-features">
+            <li>Single-document translation</li>
+            <li>Basic glossary — up to 50 terms</li>
+            <li>Read-only bilingual review view</li>
+            <li>Markdown export</li>
+            <li>BYOK — connect your own API key (OpenAI, DeepSeek, Qwen, custom)</li>
+          </ul>
+          <div class="price-display">
+            <span class="price-value">$0<span class="price-unit"> forever</span></span>
+            <span class="price-note">No registration required</span>
+          </div>
+          <div class="tool-cta">
+            <a href="/products/zephyr-translate" class="btn-primary">Get Started →</a>
+          </div>
+        </div>
+
+        <!-- Pro -->
+        <div class="tool-card pro-card">
+          <div class="tool-header">
+            <div>
+              <div class="tool-badge pro">Pro</div>
+              <h2>Pro — Subscription</h2>
+            </div>
+          </div>
+          <p class="tool-desc">Unlock the full professional workflow. Subscribe monthly or yearly — license keys activate offline, the app never phones home.</p>
+
+          <div class="period-toggle" role="group" aria-label="Billing period">
+            <button type="button" data-period="monthly" class="active">Monthly</button>
+            <button type="button" data-period="yearly">Yearly</button>
+          </div>
+
+          <div class="price-display">
+            <span class="price-value" data-period-price="monthly">$9<span class="price-unit">/month</span></span>
+            <span class="price-value" data-period-price="yearly" hidden>$49<span class="price-unit">/year</span></span>
+            <span class="price-note" data-period-price="monthly">Billed monthly. Cancel anytime.</span>
+            <span class="price-note" data-period-price="yearly">Save 54% — 2 months free</span>
+          </div>
+
+          <div class="pay-btn" data-period-btn="monthly">
+            {
+              PADDLE_CHECKOUT_URLS.monthly ? (
+                <a href={PADDLE_CHECKOUT_URLS.monthly} target="_blank" rel="noopener noreferrer" class="btn-pay">Subscribe Monthly →</a>
+              ) : (
+                <span class="btn-pay-disabled">Monthly · Launching soon</span>
+              )
+            }
+          </div>
+          <div class="pay-btn" data-period-btn="yearly" hidden>
+            {
+              PADDLE_CHECKOUT_URLS.yearly ? (
+                <a href={PADDLE_CHECKOUT_URLS.yearly} target="_blank" rel="noopener noreferrer" class="btn-pay">Subscribe Yearly →</a>
+              ) : (
+                <span class="btn-pay-disabled">Yearly · Launching soon</span>
+              )
+            }
+          </div>
+
+          <ul class="tool-features">
+            <li>Batch translation queue — multiple documents, multiple languages</li>
+            <li>Industry terminology packs (finance, academic, legal)</li>
+            <li>Unlimited glossary with import/export</li>
+            <li>Pro exports — DOCX, bilingual comparison, glossary notes</li>
+            <li>Polish side panel — rewrite or ask follow-up on any segment</li>
+            <li>Per-segment progress with resume-after-interrupt</li>
+          </ul>
+          <div class="tool-cta">
+            <span class="tool-status">Pay via Paddle</span>
+            <a href="/products/zephyr-translate" class="btn-primary">View Pricing →</a>
+          </div>
+        </div>
+
+        <!-- Lifetime -->
+        <div class="tool-card lifetime-card">
+          <div class="tool-header">
+            <div>
+              <div class="tool-badge lifetime">Lifetime</div>
+              <h2>Lifetime — Buy Once</h2>
+            </div>
+          </div>
+          <p class="tool-desc">Buy Zephyr Translate once and keep it forever. One-time payment, no subscription — your license key activates offline.</p>
+          <div class="price-display">
+            <span class="price-value">$99<span class="price-unit"> one-time</span></span>
+            <span class="price-note">Early-bird price, limited time</span>
+          </div>
+          <div class="pay-btn">
+            {
+              PADDLE_CHECKOUT_URLS.lifetime ? (
+                <a href={PADDLE_CHECKOUT_URLS.lifetime} target="_blank" rel="noopener noreferrer" class="btn-pay">Buy Lifetime License →</a>
+              ) : (
+                <span class="btn-pay-disabled">Lifetime · Launching soon</span>
+              )
+            }
+          </div>
+          <ul class="tool-features">
+            <li>All Pro features, one-time payment</li>
+            <li>Locks in the Zephyr 1.x Pro feature set</li>
+            <li>License key activates offline</li>
+            <li>Early-bird upgrade path to future major versions</li>
+          </ul>
+          <div class="tool-cta">
+            <span class="tool-status">Pay via Paddle</span>
+            <a href="/products/zephyr-translate" class="btn-primary">View Pricing →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="tools-note">
-      <h2>Why a free translation tool?</h2>
-      <p>The best way to prove our datasets work is to let you experience a product powered by them. Free tool is the demo. Professional version is the product.</p>
+      <h2>Why Zephyr Translate?</h2>
+      <p class="note-lead">Long documents need more than a paste-a-paragraph web tool. Books, contracts, research papers — they have terms that must stay consistent from page one to the end.</p>
+      <div class="note-grid">
+        <div class="note-item">
+          <h3>🔒 BYOK Privacy</h3>
+          <p>Your documents, translations, and API keys are stored only on your machine. The app calls AI models directly — no middleman server ever sees your data.</p>
+        </div>
+        <div class="note-item">
+          <h3>📚 Terminology Consistency</h3>
+          <p>Custom glossaries are enforced across the entire document. The same term translates the same way on page 1 and page 400.</p>
+        </div>
+        <div class="note-item">
+          <h3>🖥️ Windows Desktop</h3>
+          <p>Built with Tauri — installs in seconds, runs fast, and works offline. License keys activate locally; no runtime connectivity checks.</p>
+        </div>
+      </div>
       <p>Questions? <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a></p>
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
+<script>
+  // Toggle between Monthly ($9/mo) and Yearly ($49/yr) on the Pro card.
+  document.querySelectorAll('[data-period]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const period = btn.dataset.period;
+      const card = btn.closest('.pro-card');
+      if (!card) return;
+
+      card.querySelectorAll('[data-period]').forEach((b) => {
+        b.classList.toggle('active', b === btn);
+      });
+      card.querySelectorAll('[data-period-price]').forEach((el) => {
+        el.hidden = el.dataset.periodPrice !== period;
+      });
+      card.querySelectorAll('[data-period-btn]').forEach((el) => {
+        el.hidden = el.dataset.periodBtn !== period;
+      });
+    });
+  });
+</script>
+
 <style>
-  main { max-width: 860px; margin: 0 auto; padding: 5rem 1rem 2rem; }
+  main { max-width: 960px; margin: 0 auto; padding: 5rem 1rem 2rem; }
   .tools-hero { text-align: center; padding: 3rem 0 2rem; }
   .tools-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.75rem; }
-  .hero-tagline { font-size: 1.15rem; color: var(--color-text-muted); max-width: 500px; margin: 0 auto; }
-  .tool-section { display: flex; flex-direction: column; gap: 1.5rem; padding: 2rem 0; }
-  .tool-card { padding: 1.5rem 2rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
-  .tool-card.highlight { border-color: rgba(77, 124, 254, 0.35); }
+  .hero-tagline { font-size: 1.15rem; color: var(--color-text-muted); max-width: 520px; margin: 0 auto 1.25rem; }
+  .btn-primary { display: inline-block; background: var(--color-white); color: #000; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  
+  .pricing-section { padding: 2rem 0; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+  
+  .tool-card { display: flex; flex-direction: column; padding: 1.5rem 1.5rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
+  .free-card { border-color: rgba(77, 124, 254, 0.35); }
+  .pro-card { border-color: rgba(34, 197, 94, 0.45); }
+  .lifetime-card { border-color: rgba(249, 115, 22, 0.45); }
+  
   .tool-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
   .tool-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.3rem; }
   .tool-badge.free { background: var(--color-blue); color: #fff; }
   .tool-badge.pro { background: #22c55e; color: #fff; }
+  .tool-badge.lifetime { background: #f97316; color: #fff; }
   .tool-header h2 { font-size: 1.3rem; margin: 0; }
-  .tool-desc { color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem; }
-  .tool-features { padding-left: 1.25rem; margin-bottom: 1.5rem; color: var(--color-text-muted); }
-  .tool-features li { margin-bottom: 0.35rem; font-size: 0.9rem; }
-  .tool-cta { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--color-border-soft); }
-  .tool-status { color: var(--color-text-faint); font-size: 0.85rem; }
-  .btn-primary { display: inline-block; background: var(--color-white); color: #000; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-  .comparison { margin: 1rem 0 1.5rem; }
-  .comparison h3 { font-size: 0.85rem; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
-  .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .compare-card { padding: 0.75rem 1rem; border-radius: 6px; background: rgba(10, 13, 20, 0.5); border: 1px solid var(--color-border-soft); }
-  .compare-card.generic { opacity: 0.7; }
-  .compare-label { display: block; font-size: 0.7rem; font-weight: 600; color: var(--color-text-faint); margin-bottom: 0.5rem; text-transform: uppercase; }
-  .compare-text { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.35rem; font-style: italic; }
-  .compare-trans { font-size: 0.85rem; color: var(--color-white); margin-bottom: 0.35rem; }
-  .compare-note { font-size: 0.72rem; color: var(--color-text-faint); }
-  .compare-card:not(.generic) .compare-note { color: #22c55e; }
+  .tool-desc { color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem; font-size: 0.9rem; }
+  
+  .tool-features { padding-left: 1.25rem; margin: 1.25rem 0 0; flex: 1; color: var(--color-text-muted); }
+  .tool-features li { margin-bottom: 0.35rem; font-size: 0.88rem; }
+  
+  .period-toggle { display: inline-flex; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--color-border-soft); border-radius: 999px; padding: 3px; margin-bottom: 1rem; }
+  .period-toggle button { border: 0; background: transparent; color: var(--color-text-faint); padding: 0.4rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
+  .period-toggle button.active { background: #22c55e; color: #fff; }
+  
+  .price-display { margin-bottom: 1rem; }
+  .price-value { font-size: 2rem; font-weight: 800; color: var(--color-white); display: block; line-height: 1.1; }
+  .price-unit { font-size: 0.9rem; font-weight: 400; color: var(--color-text-faint); }
+  .price-note { color: var(--color-text-muted); font-size: 0.82rem; display: block; margin-top: 0.25rem; }
+  
+  .pay-btn { margin-bottom: 0.5rem; }
+  .btn-pay { display: inline-block; width: 100%; text-align: center; background: #22c55e; color: #fff; padding: 0.55rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; }
+  .btn-pay:hover { filter: brightness(1.1); }
+  .btn-pay-disabled { display: inline-block; width: 100%; text-align: center; background: transparent; color: var(--color-text-faint); padding: 0.55rem 1rem; border: 1px solid var(--color-border-soft); border-radius: 6px; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; }
+  
+  .tool-cta { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--color-border-soft); margin-top: 1rem; }
+  .tool-status { color: var(--color-text-faint); font-size: 0.82rem; }
+  
   .tools-note { text-align: center; padding: 3rem 0; border-top: 1px solid var(--color-border-soft); }
-  .tools-note h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-  .tools-note p { color: var(--color-text-muted); max-width: 560px; margin: 0 auto 1rem; line-height: 1.6; }
+  .tools-note h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .note-lead { color: var(--color-text-muted); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.6; }
+  .note-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; text-align: left; }
+  .note-item { padding: 1.25rem; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-card); }
+  .note-item h3 { font-size: 1rem; color: var(--color-white); margin: 0 0 0.5rem; }
+  .note-item p { color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.55; margin: 0; }
+  .tools-note p:last-child { color: var(--color-text-muted); }
   .tools-note a { color: var(--color-blue); }
-  @media (max-width: 600px) { .compare-cards { grid-template-columns: 1fr; } .tool-cta { flex-direction: column; gap: 0.75rem; text-align: center; } }
+  
+  @media (max-width: 900px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .note-grid { grid-template-columns: 1fr; }
+    .tool-cta { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
 </style>
+</｜｜DSML｜｜>
