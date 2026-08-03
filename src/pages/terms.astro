@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/homepage/Navbar.astro";
+import Footer from "../components/shared/Footer.astro";
+---
+
+<BaseLayout
+  title="Terms of Service | Zephyr Translate"
+  description="Terms of Service for Zephyr Translate — a Windows desktop AI translation tool by zephyrdn.com. Software licensing, BYOK disclaimer, and usage terms."
+>
+  <Navbar />
+  <main class="legal-page">
+    <h1>Terms of Service</h1>
+    <p class="legal-updated">Last updated: August 3, 2026</p>
+    <p class="legal-lead">
+      These Terms of Service ("Terms") govern your access to and use of <strong>Zephyr Translate</strong>,
+      a Windows desktop application for AI-powered long-document translation, operated by zephyrdn.com
+      ("we", "us", or "our").
+    </p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By downloading, installing, or using Zephyr Translate, you agree to be bound by these Terms.
+      If you do not agree to any part of these Terms, please do not use the software.
+    </p>
+
+    <h2>2. Software License</h2>
+    <p>
+      Zephyr Translate is licensed to you for personal or commercial use, based on the plan you
+      purchased (Free, Pro subscription, or Lifetime license). We grant you a limited,
+      non-exclusive, non-transferable license to use the software in accordance with your plan.
+    </p>
+    <ul>
+      <li><strong>Free plan:</strong> A limited feature set, available at no cost and without registration.</li>
+      <li><strong>Pro subscription (monthly or yearly):</strong> Full feature set while your subscription is active. License keys activate offline and do not require connectivity checks.</li>
+      <li><strong>Lifetime license:</strong> Full feature set of the Zephyr Translate 1.x Pro edition, paid once. Your license key activates offline and never expires.</li>
+    </ul>
+    <p>
+      You may not reverse engineer, decompile, copy, sell, or redistribute the software, except as
+      expressly permitted by applicable law.
+    </p>
+
+    <h2>3. BYOK — Bring Your Own Key</h2>
+    <p>
+      Zephyr Translate supports "Bring Your Own Key" (BYOK): you may connect your own API key from
+      OpenAI, DeepSeek, Qwen, or a custom provider to power the translation features.
+    </p>
+    <ul>
+      <li>Your API key is stored <strong>only on your device</strong> and is used to call your chosen AI provider directly from the app.</li>
+      <li>We do not see, store, or relay your API key through any intermediary server.</li>
+      <li><strong>You are solely responsible for safeguarding your API key.</strong> Keep it confidential and do not share it. Any usage, cost, or abuse incurred from your API key is your responsibility, including charges billed by your AI provider.</li>
+      <li>If you believe your API key has been compromised, revoke or rotate it through your provider's dashboard immediately.</li>
+    </ul>
+    <p class="legal-note">
+      We are not responsible for any charges, errors, or interruptions caused by third-party AI
+      providers you connect via BYOK. Translation quality and availability depend on the provider
+      you choose.
+    </p>
+
+    <h2>4. Privacy</h2>
+    <p>
+      Your documents, translations, terminology glossaries, and API keys are processed and stored
+      <strong>entirely on your local machine</strong>. Translation runs locally with AI models you
+      connect. We do not collect your documents or translation content.
+    </p>
+    <p>
+      The only data we may collect is the email address you voluntarily provide when activating a
+      free or paid license, used solely to deliver and support your license. See our
+      <a href="/privacy">Privacy Policy</a> for details.
+    </p>
+
+    <h2>5. Acceptable Use</h2>
+    <p>You agree not to use Zephyr Translate to:</p>
+    <ul>
+      <li>Violate any applicable law or regulation;</li>
+      <li>Translate or distribute content that is unlawful, defamatory, or infringes third-party rights;</li>
+      <li>Attempt to bypass, disable, or circumvent license enforcement;</li>
+      <li>Resell or sublicense the software or license keys.</li>
+    </ul>
+
+    <h2>6. Payments and Refunds</h2>
+    <p>
+      Paid plans are processed through Paddle, our payment provider. All purchases are subject to
+      Paddle's payment terms. Unless otherwise required by law, all purchases are final, except as
+      described in our <a href="/refunds">Refund Policy</a>.
+    </p>
+
+    <h2>7. Disclaimers and Limitation of Liability</h2>
+    <p>
+      THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED,
+      INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+      NON-INFRINGEMENT. TRANSLATION OUTPUT IS PROVIDED FOR INFORMATIONAL PURPOSES AND MAY CONTAIN
+      ERRORS OR INACCURACIES.
+    </p>
+    <p>
+      TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT,
+      INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR
+      BUSINESS, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SOFTWARE OR TRANSLATION
+      OUTPUT.
+    </p>
+
+    <h2>8. Changes to These Terms</h2>
+    <p>
+      We may update these Terms from time to time. The latest version will always be published on
+      this page, and the "Last updated" date above will be revised. Your continued use of the
+      software after changes constitutes acceptance of the revised Terms.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      If you have any questions about these Terms, please contact us at
+      <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page { max-width: 720px; margin: 0 auto; padding: 5rem 1.5rem 4rem; color: var(--color-text-muted); line-height: 1.7; }
+  .legal-lead { font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; }
+  .legal-page h1, .legal-page h2 { color: var(--color-white); margin: 1.5rem 0 0.75rem; }
+  .legal-page h1 { margin-top: 0; }
+  .legal-page a { color: var(--color-blue); }
+  .legal-page ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .legal-updated { color: var(--color-text-faint); font-size: 0.85rem; margin-bottom: 1rem; }
+  .legal-note { font-style: italic; font-size: 0.95rem; color: var(--color-text-faint); padding: 1rem 1.25rem; border-left: 3px solid var(--color-border-soft); margin: 1.5rem 0; }
+  @media (max-width: 600px) { .legal-page { padding: 4rem 1rem 3rem; } }
+</style>
+</｜｜DSML｜｜>

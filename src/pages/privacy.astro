@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/homepage/Navbar.astro";
+import Footer from "../components/shared/Footer.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy | Zephyr Translate"
+  description="Privacy Policy for Zephyr Translate — a Windows desktop AI translation tool by zephyrdn.com. Local-only processing, no document collection, minimal data."
+>
+  <Navbar />
+  <main class="legal-page">
+    <h1>Privacy Policy</h1>
+    <p class="legal-updated">Last updated: August 3, 2026</p>
+    <p class="legal-lead">
+      This Privacy Policy explains how <strong>Zephyr Translate</strong>, operated by zephyrdn.com
+      ("we", "us", or "our"), handles your information. Our core design principle is
+      <strong>privacy by default</strong>: your documents and data stay on your device.
+    </p>
+
+    <h2>1. Local-Only Processing</h2>
+    <p>
+      Zephyr Translate is a <strong>Windows desktop application</strong> that runs entirely on your
+      machine. Your documents, translations, terminology glossaries, and settings are stored only
+      on your local device. The translation process runs locally — we do not upload, store, or
+      process your documents or translation content on any server.
+    </p>
+    <p>
+      When you connect your own API key (BYOK) to an AI provider such as OpenAI, DeepSeek, or Qwen,
+      the app sends the document content directly to that provider from your machine. Your API key
+      is stored only on your device and never transmitted to us.
+    </p>
+
+    <h2>2. What We Collect</h2>
+    <p>We collect the minimum necessary to operate and support the service:</p>
+    <ul>
+      <li><strong>Email address</strong> — collected only when you voluntarily activate a free or paid license, used to deliver your license key and purchase confirmation.</li>
+      <li><strong>Purchase information</strong> — handled by our payment provider Paddle; we do not store your payment card details.</li>
+      <li><strong>Anonymous diagnostic data</strong> — optional and limited to crash/error reporting; it never includes your documents, translations, or API keys.</li>
+    </ul>
+
+    <h2>3. What We Do NOT Collect</h2>
+    <ul>
+      <li>Your documents or their contents</li>
+      <li>Your translations or translation history</li>
+      <li>Your terminology glossaries</li>
+      <li>Your API keys (they stay on your machine)</li>
+      <li>Any browsing or usage tracking across other websites</li>
+    </ul>
+
+    <h2>4. How We Use Your Email</h2>
+    <p>
+      Your email is used solely to issue licenses and send transactional emails (license
+      activation, purchase confirmation, and account support). We do not send marketing emails
+      unless you explicitly opt in, and we never sell or share your email with third parties for
+      their marketing purposes.
+    </p>
+
+    <h2>5. Payment Processing</h2>
+    <p>
+      Payments for Pro subscriptions and Lifetime licenses are processed by
+      <strong>Paddle</strong>, a reputable payment provider. Your payment details are handled by
+      Paddle under their own privacy policy. We receive only the transaction confirmation and the
+      email address associated with your purchase.
+    </p>
+
+    <h2>6. Data Retention</h2>
+    <p>
+      We retain your email and license record only for as long as necessary to provide licenses,
+      process refunds, or comply with legal obligations. You may request deletion of your records
+      at any time by contacting us
+      (<a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>), subject to applicable law.
+      Paddle retains payment records in accordance with their own retention policies.
+    </p>
+
+    <h2>7. Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you;</li>
+      <li>Request correction or deletion of your data;</li>
+      <li>Object to or restrict certain processing;</li>
+      <li>Lodge a complaint with your local data protection authority.</li>
+    </ul>
+    <p>
+      To exercise these rights, contact us at <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>.
+    </p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>
+      Zephyr Translate is not directed to children under 13 (or the applicable minimum age in your
+      jurisdiction). We do not knowingly collect personal information from children.
+    </p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. The latest version will always be
+      published on this page. Material changes will be reflected by the "Last updated" date above.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      For any privacy questions, contact us at
+      <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a> or via zephyrdn.com.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page { max-width: 720px; margin: 0 auto; padding: 5rem 1.5rem 4rem; color: var(--color-text-muted); line-height: 1.7; }
+  .legal-lead { font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; }
+  .legal-page h1, .legal-page h2 { color: var(--color-white); margin: 1.5rem 0 0.75rem; }
+  .legal-page h1 { margin-top: 0; }
+  .legal-page a { color: var(--color-blue); }
+  .legal-page ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .legal-updated { color: var(--color-text-faint); font-size: 0.85rem; margin-bottom: 1rem; }
+  @media (max-width: 600px) { .legal-page { padding: 4rem 1rem 3rem; } }
+</style>
+</｜｜DSML｜｜>
