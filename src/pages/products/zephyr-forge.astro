@@ -2,6 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/homepage/Navbar.astro";
 import Footer from "../../components/shared/Footer.astro";
+
+// TODO: 收到真实 USDT-TRC20 地址后替换这一处即可，全文件只有这一个来源
+const USDT_TRC20_ADDRESS = "USDT_TRC20_ADDRESS_PLACEHOLDER";
+const ORDER_EMAIL = "orders@zephyrdn.com";
 ---
 
 <BaseLayout
@@ -14,7 +18,7 @@ import Footer from "../../components/shared/Footer.astro";
       <div class="product-badge">v2.0 — Available Now</div>
       <h1>Zephyr Forge</h1>
       <p class="product-tagline">Niche Chain OHLCV Dataset — Multi-Exchange Aligned, AI-Ready</p>
-      <a href="https://gumroad.com" class="btn-primary">Buy Now — $29</a>
+      <a href="#payment" class="btn-primary">Order Now — $29</a>
     </section>
 
     <section class="product-section">
@@ -84,13 +88,34 @@ import Footer from "../../components/shared/Footer.astro";
       </div>
     </section>
 
+    <section class="product-section payment-section" id="payment">
+      <h2>How to Order</h2>
+      <p>
+        Two ways to pay — pick whichever fits your workflow. After payment, email your transaction
+        hash or transfer receipt to <a href={`mailto:${ORDER_EMAIL}`}>{ORDER_EMAIL}</a> and you'll
+        receive a signed download link within 24 hours.
+      </p>
+      <div class="payment-options">
+        <div class="payment-card">
+          <h3>Stablecoin — USDT (TRC20)</h3>
+          <p class="payment-address">{USDT_TRC20_ADDRESS}</p>
+          <p class="payment-note">Send the exact amount, then email the transaction hash to confirm.</p>
+        </div>
+        <div class="payment-card">
+          <h3>Wire Transfer / Invoice</h3>
+          <p class="payment-note">Need a formal invoice or bank wire for your company's procurement process?</p>
+          <a href={`mailto:${ORDER_EMAIL}?subject=Zephyr Forge — Wire Transfer Inquiry`} class="btn-secondary">Contact for Invoice →</a>
+        </div>
+      </div>
+    </section>
+
     <section class="product-section pricing">
       <h2>Pricing</h2>
       <div class="price-card">
         <span class="price">$29</span>
         <span class="price-note">One-time purchase. Lifetime access to v2.0 dataset.</span>
       </div>
-      <a href="https://gumroad.com" class="btn-primary">Get Zephyr Forge →</a>
+      <a href="#payment" class="btn-primary">Get Zephyr Forge →</a>
     </section>
   </main>
   <Footer />
@@ -140,6 +165,9 @@ import Footer from "../../components/shared/Footer.astro";
     line-height: 1.7;
     margin-bottom: 0.75rem;
   }
+  .product-section a {
+    color: var(--color-blue);
+  }
   .feature-list {
     list-style: none;
     padding: 0;
@@ -169,6 +197,38 @@ import Footer from "../../components/shared/Footer.astro";
   .spec-value {
     font-weight: 600;
   }
+  .payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .payment-card {
+    padding: 1.25rem;
+    background: var(--color-card);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-md);
+  }
+  .payment-card h3 {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+  }
+  .payment-address {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.82rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    word-break: break-all;
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+  }
+  .payment-note {
+    font-size: 0.85rem;
+    color: var(--color-text-faint);
+    margin-bottom: 0;
+  }
   .pricing {
     text-align: center;
   }
@@ -183,5 +243,10 @@ import Footer from "../../components/shared/Footer.astro";
   .price-note {
     color: var(--color-text-muted);
     font-size: 0.95rem;
+  }
+  @media (max-width: 600px) {
+    .payment-options {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

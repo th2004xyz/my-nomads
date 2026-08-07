@@ -13,15 +13,9 @@ const products = [
     icon: "📊",
     title: "Zephyr Forge",
     tag: "Available",
+    highlight: "Currently accepting orders",
     description: "Curated crypto OHLCV dataset for niche chains. Multi-exchange aligned, AI-ready Parquet files.",
     href: "/products/zephyr-forge",
-  },
-  {
-    icon: "🔌",
-    title: "Zephyr Data Factory",
-    tag: "Coming Soon",
-    description: "Dataset API subscription — programmatic access to curated data with usage-based billing.",
-    href: "/products/zephyr-data-factory",
   },
   {
     icon: "🌐",
@@ -29,6 +23,13 @@ const products = [
     tag: "Available",
     description: "Windows desktop AI translation for long documents. Freemium, BYOK — your docs and keys stay on your machine.",
     href: "/products/zephyr-translate",
+  },
+  {
+    icon: "🔌",
+    title: "Zephyr Data Factory",
+    tag: "Coming Soon",
+    description: "Dataset API subscription — programmatic access to curated data with usage-based billing.",
+    href: "/products/zephyr-data-factory",
   },
 ];
 ---
@@ -54,6 +55,7 @@ const products = [
             <span class={`product-tag ${p.tag === 'Available' ? 'tag-available' : 'tag-coming'}`}>{p.tag}</span>
           </div>
           <h3>{p.title}</h3>
+          {p.highlight && <span class="product-highlight">{p.highlight}</span>}
           <p>{p.description}</p>
           <span class="product-link">Learn more →</span>
         </a>
@@ -100,6 +102,17 @@ const products = [
   .tag-coming {
     background: #f59e0b;
     color: #fff;
+  }
+  .product-highlight {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.18rem 0.55rem;
+    background: rgba(255, 138, 61, 0.14);
+    border: 1px solid rgba(255, 138, 61, 0.3);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #ffb27a;
   }
   .product-link {
     display: inline-block;
