@@ -25,7 +25,8 @@ import Footer from "../../components/shared/Footer.astro";
       </p>
       <p>
         Built on Cloudflare Workers for global low-latency delivery, with built-in authentication,
-        rate limiting, and usage-based billing.
+        rate limiting, and usage-based billing — payable via invoice, card subscription, or
+        native agent-to-agent payment, depending on how you're calling it.
       </p>
     </section>
 
@@ -46,6 +47,31 @@ import Footer from "../../components/shared/Footer.astro";
         <li><strong>MCP Protocol</strong> — Native Claude/Cursor integration via MCP stdio</li>
         <li><strong>Daily Updates</strong> — Automated incremental data refresh via GitHub Actions</li>
       </ul>
+    </section>
+
+    <section class="product-section" id="payment">
+      <h2>Payment Options</h2>
+      <p>
+        Three ways to pay, matched to how you're using Data Factory — human subscriber,
+        AI agent caller, or enterprise procurement.
+      </p>
+      <div class="payment-options payment-options-triple">
+        <div class="payment-card">
+          <h3>Wire Transfer / Invoice</h3>
+          <p class="payment-note">Best for large B2B orders and procurement processes requiring a formal invoice.</p>
+          <a href="mailto:orders@zephyrdn.com?subject=Zephyr Data Factory — Invoice Inquiry" class="btn-secondary">Contact for Invoice →</a>
+        </div>
+        <div class="payment-card">
+          <h3>Card / Subscription (Paddle)</h3>
+          <p class="payment-note">For individual subscribers who prefer card payment. Hosted checkout is pending provider approval.</p>
+          <span class="btn-disabled">Coming soon — checkout pending approval</span>
+        </div>
+        <div class="payment-card">
+          <h3>Agent Pay-Per-Call (x402)</h3>
+          <p class="payment-note">Native per-request payment for AI agents calling our MCP tools directly. Protocol integration in progress.</p>
+          <span class="btn-disabled">Coming soon — integration in progress</span>
+        </div>
+      </div>
     </section>
 
     <section class="product-section pricing">
@@ -133,5 +159,46 @@ import Footer from "../../components/shared/Footer.astro";
   .price-note {
     color: var(--color-text-muted);
     font-size: 0.95rem;
+  }
+  .payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .payment-options-triple {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .payment-card {
+    padding: 1.25rem;
+    background: var(--color-card);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-md);
+  }
+  .payment-card h3 {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+  }
+  .payment-note {
+    font-size: 0.85rem;
+    color: var(--color-text-faint);
+    margin-bottom: 1rem;
+  }
+  .btn-disabled {
+    display: inline-block;
+    text-align: center;
+    background: transparent;
+    color: var(--color-text-faint);
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 700px) {
+    .payment-options-triple {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
