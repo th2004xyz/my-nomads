@@ -26,23 +26,25 @@
 
 <style>
   .footer {
-    background: #111;
-    color: #ccc;
+    background: var(--background-100);
+    color: var(--text-500);
     padding: 3rem 1rem 2rem;
     margin-top: 4rem;
+    border-top: 1px solid var(--color-border-soft);
   }
   .footer-container {
     max-width: 1100px;
     margin: 0 auto;
   }
   .footer-brand {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--color-border-soft);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
   }
   .footer-brand p {
     margin: 0;
     font-size: 0.95rem;
+    color: var(--text-500);
   }
   .footer-links {
     display: flex;
@@ -50,20 +52,23 @@
     flex-wrap: wrap;
   }
   .footer-col h4 {
-    color: #fff;
-    font-size: 0.85rem;
+    color: var(--foreground);
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
+    font-weight: 600;
   }
   .footer-col a {
     display: block;
-    color: #999;
+    color: var(--muted-foreground);
     text-decoration: none;
     font-size: 0.9rem;
     padding: 0.2rem 0;
+    transition: color var(--transition);
   }
   .footer-col a:hover {
-    color: #fff;
+    color: var(--primary);
   }
 </style>

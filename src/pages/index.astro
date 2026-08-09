@@ -8,28 +8,38 @@ import Hero             from "../components/homepage/Hero.astro";
 import CTACommunity     from "../components/homepage/CTACommunity.astro";
 import Footer           from "../components/shared/Footer.astro";
 
+// Inline SVG icon paths (Lucide-style)
+const iconDatabase = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`;
+const iconFunnel = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>`;
+const iconLanguages = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>`;
+
 const products = [
   {
-    icon: "📊",
+    icon: iconDatabase,
     title: "Zephyr Forge",
     tag: "Available",
-    highlight: "Currently accepting orders",
-    description: "Curated crypto OHLCV dataset for niche chains. Multi-exchange aligned, AI-ready Parquet files.",
+    eyebrow: "Datasets",
+    description: "Curated crypto OHLCV dataset for niche chains. Multi-exchange aligned, AI-ready Parquet files with full provenance.",
     href: "/products/zephyr-forge",
+    cta: "Browse datasets",
   },
   {
-    icon: "🌐",
-    title: "Zephyr Translate",
-    tag: "Available",
-    description: "Windows desktop AI translation for long documents. Freemium, BYOK — your docs and keys stay on your machine.",
-    href: "/products/zephyr-translate",
-  },
-  {
-    icon: "🔌",
+    icon: iconFunnel,
     title: "Zephyr Data Factory",
     tag: "Coming Soon",
-    description: "Dataset API subscription — programmatic access to curated data with usage-based billing.",
+    eyebrow: "Pipeline",
+    description: "Dataset API subscription — programmatic access to curated data with usage-based billing via MCP endpoints.",
     href: "/products/zephyr-data-factory",
+    cta: "View documentation",
+  },
+  {
+    icon: iconLanguages,
+    title: "Zephyr Translate",
+    tag: "Available",
+    eyebrow: "Case study",
+    description: "Windows desktop AI translation for long documents. Freemium, BYOK — your docs and keys stay on your machine.",
+    href: "/products/zephyr-translate",
+    cta: "See the case study",
   },
 ];
 ---
@@ -43,82 +53,36 @@ const products = [
 
   <section class="section" id="products">
     <div class="section-header">
-      <div class="section-label">What We Build</div>
-      <h2 class="section-title">Data Products</h2>
+      <div class="section-label">Products</div>
+      <h2 class="section-title">A unified data stack for AI</h2>
     </div>
 
     <div class="card-grid">
       {products.map((p) => (
-        <a href={p.href} class="card product-card">
+        <a href={p.href} class="card product-card" style="display:flex; flex-direction:column;">
           <div class="product-card-header">
-            <span class="product-icon">{p.icon}</span>
+            <span class="product-icon" set:html={p.icon} />
             <span class={`product-tag ${p.tag === 'Available' ? 'tag-available' : 'tag-coming'}`}>{p.tag}</span>
           </div>
+          <p class="section-label" style="margin-bottom:0.25rem; text-align:left;">{p.eyebrow}</p>
           <h3>{p.title}</h3>
-          {p.highlight && <span class="product-highlight">{p.highlight}</span>}
           <p>{p.description}</p>
-          <span class="product-link">Learn more →</span>
+          <span class="product-link">{p.cta} →</span>
         </a>
       ))}
     </div>
   </section>
 
+  <section class="section" style="text-align:center; max-width:720px;">
+    <h2 class="section-title">Built on a proven methodology</h2>
+    <p class="section-subtitle">
+      Every dataset we ship is backed by rigorous cleaning, anomaly detection, and full provenance tracking.
+    </p>
+    <a href="/about" class="product-link" style="margin-top:1rem;">
+      Learn about our methodology →
+    </a>
+  </section>
+
   <CTACommunity />
   <Footer />
 </BaseLayout>
-
-<style>
-  .product-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 1.5rem;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    transition: border-color 0.2s;
-  }
-  .product-card:hover {
-    border-color: #000;
-  }
-  .product-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-  }
-  .product-icon {
-    font-size: 1.5rem;
-  }
-  .product-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-  }
-  .tag-available {
-    background: #22c55e;
-    color: #fff;
-  }
-  .tag-coming {
-    background: #f59e0b;
-    color: #fff;
-  }
-  .product-highlight {
-    display: inline-block;
-    margin-top: 0.4rem;
-    padding: 0.18rem 0.55rem;
-    background: rgba(255, 138, 61, 0.14);
-    border: 1px solid rgba(255, 138, 61, 0.3);
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: #ffb27a;
-  }
-  .product-link {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-blue, #2563eb);
-  }
-</style>

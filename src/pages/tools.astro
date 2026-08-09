@@ -197,18 +197,18 @@ import { PADDLE_CHECKOUT_URLS } from '../consts';
   
   .tool-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
   .tool-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .tool-badge.free { background: var(--color-blue); color: #fff; }
-  .tool-badge.pro { background: #22c55e; color: #fff; }
-  .tool-badge.lifetime { background: #f97316; color: #fff; }
+  .tool-badge.free { background: rgba(0, 122, 255, 0.12); color: var(--primary); }
+  .tool-badge.pro { background: rgba(52, 199, 89, 0.12); color: #248a3d; }
+  .tool-badge.lifetime { background: rgba(255, 149, 0, 0.12); color: #c77c00; }
   .tool-header h2 { font-size: 1.3rem; margin: 0; }
   .tool-desc { color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem; font-size: 0.9rem; }
   
   .tool-features { padding-left: 1.25rem; margin: 1.25rem 0 0; flex: 1; color: var(--color-text-muted); }
   .tool-features li { margin-bottom: 0.35rem; font-size: 0.88rem; }
   
-  .period-toggle { display: inline-flex; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--color-border-soft); border-radius: 999px; padding: 3px; margin-bottom: 1rem; }
+  .period-toggle { display: inline-flex; background: var(--secondary); border: 1px solid var(--color-border-soft); border-radius: 999px; padding: 3px; margin-bottom: 1rem; }
   .period-toggle button { border: 0; background: transparent; color: var(--color-text-faint); padding: 0.4rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
-  .period-toggle button.active { background: #22c55e; color: #fff; }
+  .period-toggle button.active { background: var(--primary); color: var(--primary-foreground); }
   
   .price-display { margin-bottom: 1rem; }
   .price-value { font-size: 2rem; font-weight: 800; color: var(--color-white); display: block; line-height: 1.1; }
@@ -216,9 +216,9 @@ import { PADDLE_CHECKOUT_URLS } from '../consts';
   .price-note { color: var(--color-text-muted); font-size: 0.82rem; display: block; margin-top: 0.25rem; }
   
   .pay-btn { margin-bottom: 0.5rem; }
-  .btn-pay { display: inline-block; width: 100%; text-align: center; background: #22c55e; color: #fff; padding: 0.55rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; }
-  .btn-pay:hover { filter: brightness(1.1); }
-  .btn-pay-disabled { display: inline-block; width: 100%; text-align: center; background: transparent; color: var(--color-text-faint); padding: 0.55rem 1rem; border: 1px solid var(--color-border-soft); border-radius: 6px; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; }
+  .btn-pay { display: inline-block; width: 100%; text-align: center; background: #34c759; color: #fff; padding: 0.55rem 1rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; font-family: var(--font-serif); transition: filter 0.15s; }
+  .btn-pay:hover { filter: brightness(0.96); }
+  .btn-pay-disabled { display: inline-block; width: 100%; text-align: center; background: transparent; color: var(--color-text-faint); padding: 0.55rem 1rem; border: 1px solid var(--color-border-soft); border-radius: 999px; font-weight: 600; font-size: 0.88rem; box-sizing: border-box; font-family: var(--font-serif); }
   
   .tool-cta { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--color-border-soft); margin-top: 1rem; }
   .tool-status { color: var(--color-text-faint); font-size: 0.82rem; }
