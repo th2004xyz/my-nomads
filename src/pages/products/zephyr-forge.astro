@@ -4,8 +4,9 @@ import Navbar from "../../components/homepage/Navbar.astro";
 import Footer from "../../components/shared/Footer.astro";
 
 // TODO: 收到真实 USDT-TRC20 地址后替换这一处即可，全文件只有这一个来源
-const USDT_TRC20_ADDRESS = "USDT_TRC20_ADDRESS_PLACEHOLDER";
+const USDT_TRC20_ADDRESS = "TDkzRVJXwfQYyetuLsH8YB738ug3xHr3K1";
 const ORDER_EMAIL = "orders@zephyrdn.com";
+const HUGGINGFACE_SAMPLE_URL = "https://huggingface.co/datasets/zephyrdn/zephyr-forge-multi-exchange-ohlcv";
 ---
 
 <BaseLayout
@@ -18,7 +19,10 @@ const ORDER_EMAIL = "orders@zephyrdn.com";
       <div class="product-badge">v2.0 — Available Now</div>
       <h1>Zephyr Forge</h1>
       <p class="product-tagline">Niche Chain OHLCV Dataset — Multi-Exchange Aligned, AI-Ready</p>
-      <a href="#payment" class="btn-primary">Order Now — $29</a>
+      <div class="hero-actions">
+        <a href="#payment" class="btn-primary">Order Now — $29</a>
+        <a href={HUGGINGFACE_SAMPLE_URL} target="_blank" rel="noopener noreferrer" class="btn-secondary">Download Free Sample →</a>
+      </div>
     </section>
 
     <section class="product-section">
@@ -95,6 +99,11 @@ const ORDER_EMAIL = "orders@zephyrdn.com";
         hash or transfer receipt to <a href={`mailto:${ORDER_EMAIL}`}>{ORDER_EMAIL}</a> and you'll
         receive a signed download link within 24 hours.
       </p>
+      <p class="payment-instruction">
+        Subject line: <code>Forge Order — [your email]</code>. Include your
+        transaction hash (for USDT) or transfer screenshot (for wire) in the
+        email body.
+      </p>
       <div class="payment-options">
         <div class="payment-card">
           <h3>Stablecoin — USDT (TRC20)</h3>
@@ -151,6 +160,12 @@ const ORDER_EMAIL = "orders@zephyrdn.com";
     font-size: 1.15rem;
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .product-section {
     padding: 2rem 0;
@@ -229,6 +244,13 @@ const ORDER_EMAIL = "orders@zephyrdn.com";
     font-size: 0.85rem;
     color: var(--color-text-faint);
     margin-bottom: 0;
+  }
+  .payment-instruction {
+    font-size: 0.85rem;
+    color: var(--color-text-faint);
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--color-border-soft);
+    margin-top: 0.75rem;
   }
   .pricing {
     text-align: center;
