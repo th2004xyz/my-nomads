@@ -2,7 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/homepage/Navbar.astro";
 import Footer from "../../components/shared/Footer.astro";
-import { PADDLE_CHECKOUT_URLS } from "../../consts";
 ---
 
 <BaseLayout
@@ -17,7 +16,7 @@ import { PADDLE_CHECKOUT_URLS } from "../../consts";
       <p class="product-tagline">Windows Desktop AI Translation — Long Documents, Consistent Terminology, Full Privacy</p>
       <div class="hero-actions">
         <a href="/tools" class="btn-primary">Try the Free Version →</a>
-        <a href="#pricing" class="btn-secondary">See Pricing</a>
+        <a href="/tools#pricing" class="btn-secondary">See Pricing</a>
       </div>
     </section>
 
@@ -48,85 +47,15 @@ import { PADDLE_CHECKOUT_URLS } from "../../consts";
       </ul>
     </section>
 
-    <section class="product-section" id="pricing">
+    <section class="product-section pricing">
       <h2>Pricing</h2>
       <p class="pricing-intro">
-        Freemium by design — the free tier is fully usable without registration. Upgrade only when you need the pro workflow.
+        Freemium by design — three tiers covering occasional use to professional workflows:
+        <strong>Free</strong> (forever, no registration), <strong>Pro Subscription</strong>
+        (monthly or yearly), and <strong>Lifetime License</strong> (one-time payment).
+        Upgrade only when you need the pro workflow.
       </p>
-      <div class="price-grid">
-        <div class="price-card free-card">
-          <h3>Free</h3>
-          <span class="price">$0</span>
-          <span class="price-note">No registration required</span>
-          <ul class="price-features">
-            <li>Single-document translation</li>
-            <li>Basic glossary (up to 50 terms)</li>
-            <li>Read-only bilingual view</li>
-            <li>Markdown export</li>
-            <li>BYOK — connect your own API key</li>
-          </ul>
-          <a href="/tools" class="btn-ghost">Start Free →</a>
-        </div>
-
-        <div class="price-card pro-card">
-          <h3>Pro Subscription</h3>
-          <div class="period-toggle" role="group" aria-label="Billing period">
-            <button type="button" data-period="monthly" class="active">Monthly</button>
-            <button type="button" data-period="yearly">Yearly</button>
-          </div>
-          <span class="price" data-period-price="monthly">$9<span class="price-unit">/mo</span></span>
-          <span class="price" data-period-price="yearly" hidden>$49<span class="price-unit">/yr</span></span>
-          <span class="price-note" data-period-price="monthly">Billed monthly. Cancel anytime.</span>
-          <span class="price-note" data-period-price="yearly">Save 54% — 2 months free</span>
-          <div class="btn-buy-wrap" data-period-btn="monthly">
-            {
-              PADDLE_CHECKOUT_URLS.monthly ? (
-                <a href={PADDLE_CHECKOUT_URLS.monthly} target="_blank" rel="noopener noreferrer" class="btn-buy">Subscribe Monthly →</a>
-              ) : (
-                <span class="btn-disabled">Monthly · Launching soon</span>
-              )
-            }
-          </div>
-          <div class="btn-buy-wrap" data-period-btn="yearly" hidden>
-            {
-              PADDLE_CHECKOUT_URLS.yearly ? (
-                <a href={PADDLE_CHECKOUT_URLS.yearly} target="_blank" rel="noopener noreferrer" class="btn-buy">Subscribe Yearly →</a>
-              ) : (
-                <span class="btn-disabled">Yearly · Launching soon</span>
-              )
-            }
-          </div>
-          <ul class="price-features">
-            <li>Everything in Free</li>
-            <li>Batch translation queue</li>
-            <li>Industry terminology packs</li>
-            <li>Unlimited glossary (import/export)</li>
-            <li>Pro exports — DOCX, bilingual, glossary notes</li>
-            <li>Polish side panel</li>
-          </ul>
-        </div>
-
-        <div class="price-card lifetime-card">
-          <h3>Lifetime License</h3>
-          <span class="price">$99</span>
-          <span class="price-note">Early-bird price, limited time</span>
-          <ul class="price-features">
-            <li>All Pro features, one-time payment</li>
-            <li>Locks in the Zephyr 1.x Pro feature set</li>
-            <li>License key activates offline</li>
-            <li>Early-bird upgrade path to future major versions</li>
-          </ul>
-          <div class="btn-buy-wrap">
-            {
-              PADDLE_CHECKOUT_URLS.lifetime ? (
-                <a href={PADDLE_CHECKOUT_URLS.lifetime} target="_blank" rel="noopener noreferrer" class="btn-buy">Get Lifetime License →</a>
-              ) : (
-                <span class="btn-disabled">Lifetime · Launching soon</span>
-              )
-            }
-          </div>
-        </div>
-      </div>
+      <a href="/tools#pricing" class="btn-primary">See full pricing & subscribe →</a>
       <div class="byok-note">
         <strong>🔑 BYOK — Bring Your Own Key:</strong> Works with OpenAI, DeepSeek, Qwen, or custom
         providers. Your API key is stored locally and never leaves your machine. No middleman server
@@ -142,33 +71,12 @@ import { PADDLE_CHECKOUT_URLS } from "../../consts";
         privacy matter more than a quick copy-paste, Zephyr Translate is built for you.
       </p>
       <p>
-        Questions? <a href="mailto:Yakovxia@gmail.com">Yakovxia@gmail.com</a>
+        Questions? <a href="mailto:orders@zephyrdn.com">orders@zephyrdn.com</a>
       </p>
     </section>
   </main>
   <Footer />
 </BaseLayout>
-
-<script>
-  // Toggle between Monthly ($9/mo) and Yearly ($49/yr) on the Pro card.
-  document.querySelectorAll('[data-period]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const period = btn.dataset.period;
-      const card = btn.closest('.pro-card');
-      if (!card) return;
-
-      card.querySelectorAll('[data-period]').forEach((b) => {
-        b.classList.toggle('active', b === btn);
-      });
-      card.querySelectorAll('[data-period-price]').forEach((el) => {
-        el.hidden = el.dataset.periodPrice !== period;
-      });
-      card.querySelectorAll('[data-period-btn]').forEach((el) => {
-        el.hidden = el.dataset.periodBtn !== period;
-      });
-    });
-  });
-</script>
 
 <style>
   main {
@@ -370,7 +278,7 @@ import { PADDLE_CHECKOUT_URLS } from "../../consts";
   }
   .byok-note {
     max-width: 620px;
-    margin: 0 auto;
+    margin: 1.5rem auto 0;
     padding: 1rem 1.25rem;
     border: 1px solid var(--color-border-soft);
     border-radius: 8px;
