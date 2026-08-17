@@ -10,7 +10,6 @@ import Footer           from "../components/shared/Footer.astro";
 
 // Inline SVG icon paths (Lucide-style)
 const iconDatabase = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`;
-const iconFunnel = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>`;
 const iconLanguages = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>`;
 
 const products = [
@@ -22,15 +21,6 @@ const products = [
     description: "Curated crypto OHLCV dataset for niche chains. Multi-exchange aligned, AI-ready Parquet files with full provenance.",
     href: "/products/zephyr-forge",
     cta: "Browse datasets",
-  },
-  {
-    icon: iconFunnel,
-    title: "Zephyr Data Factory",
-    tag: "Coming Soon",
-    eyebrow: "Pipeline",
-    description: "Dataset API subscription — programmatic access to curated data with usage-based billing via MCP endpoints.",
-    href: "/products/zephyr-data-factory",
-    cta: "View documentation",
   },
   {
     icon: iconLanguages,

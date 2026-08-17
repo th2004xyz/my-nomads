@@ -92,6 +92,31 @@ const HUGGINGFACE_SAMPLE_URL = "https://huggingface.co/datasets/zephyrdn/zephyr-
       </div>
     </section>
 
+    <section class="product-section api-query-section" id="api-query">
+      <div class="api-status-badge">In Development</div>
+      <h2>API Query — Real-Time MCP Access</h2>
+      <p>
+        Beyond the static Parquet download above, Zephyr Forge is building a Model Context
+        Protocol (MCP) query interface so AI agents and quant workflows can query the same
+        dataset in real time — no download, no ETL.
+      </p>
+      <ul class="feature-list">
+        <li><strong>list_chains</strong> — list available chains with row counts and date ranges</li>
+        <li><strong>query_ohlcv</strong> — query OHLCV data by chain, symbol, timeframe, and date range</li>
+        <li><strong>get_stats</strong> — aggregated stats (min/max/avg price, volume, outlier count)</li>
+      </ul>
+      <p class="api-note">
+        Strictly scoped to the same 4 chains × 4 exchanges dataset sold above — no coverage
+        beyond Forge's verified data. Payment will support agent-native pay-per-call (x402)
+        and invoiced wire transfer (PingPong) for larger integrations.
+      </p>
+      <p class="api-status">
+        <strong>Status:</strong> Not yet available — under active development on the MCP v2
+        stateless spec. Want to be notified when it ships?
+        Email <a href={`mailto:${ORDER_EMAIL}?subject=Zephyr Forge — API Query Early Access`}>{ORDER_EMAIL}</a>.
+      </p>
+    </section>
+
     <section class="product-section payment-section" id="payment">
       <h2>How to Order</h2>
       <p>
@@ -191,6 +216,27 @@ const HUGGINGFACE_SAMPLE_URL = "https://huggingface.co/datasets/zephyrdn/zephyr-
   .feature-list li {
     padding: 0.5rem 0;
     color: var(--color-text-muted);
+  }
+  .api-query-section {
+    position: relative;
+  }
+  .api-status-badge {
+    display: inline-block;
+    background: rgba(255, 149, 0, 0.12);
+    color: #c77c00;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .api-note {
+    font-size: 0.88rem;
+    color: var(--color-text-faint);
+  }
+  .api-status {
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
   }
   .spec-grid {
     display: grid;
