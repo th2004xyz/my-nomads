@@ -50,7 +50,7 @@ const HUGGINGFACE_SAMPLE_URL = "https://huggingface.co/datasets/zephyrdn/zephyr-
         <li><strong>Outlier Detection</strong> — 5-sigma wick filter + 6-candle stall detection</li>
         <li><strong>Three Timeframes</strong> — 1 hour, 4 hour, and 1 day candles</li>
         <li><strong>Full Provenance</strong> — Source manifest, audit trail, and compliance report included</li>
-        <li><strong>Parquet Format</strong> — Hive-partitioned by chain/symbol/timeframe/year/month, ready for DuckDB/Pandas</li>
+        <li><strong>Parquet Format</strong> — Year-partitioned merged files, ready for DuckDB/Pandas</li>
       </ul>
     </section>
 
@@ -71,23 +71,23 @@ const HUGGINGFACE_SAMPLE_URL = "https://huggingface.co/datasets/zephyrdn/zephyr-
         </div>
         <div class="spec-item">
           <span class="spec-label">Date Range</span>
-          <span class="spec-value">2023-01-01 to 2026-07-16</span>
+          <span class="spec-value">2023-01-01 to 2026-07-16 (+08)</span>
         </div>
         <div class="spec-item">
           <span class="spec-label">Total Rows</span>
-          <span class="spec-value">421,918</span>
+          <span class="spec-value">421,586</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Raw Size</span>
-          <span class="spec-value">167.11 MB</span>
+          <span class="spec-label">File Size</span>
+          <span class="spec-value">~19.29 MiB (uncompressed) / 15.48 MB (zip)</span>
         </div>
         <div class="spec-item">
           <span class="spec-label">Format</span>
-          <span class="spec-value">Parquet (Hive-partitioned)</span>
+          <span class="spec-value">Parquet (merged, year-partitioned)</span>
         </div>
         <div class="spec-item">
           <span class="spec-label">Files</span>
-          <span class="spec-value">14,907</span>
+          <span class="spec-value">48</span>
         </div>
       </div>
     </section>
